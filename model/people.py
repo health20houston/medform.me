@@ -18,6 +18,7 @@ class Person(Entity):
 	ssn = Field(Unicode(150), nullable=True)
 	phoneNumbers = OneToMany("PhoneNumber")
 	emergencyContacts = OneToMany("EmergencyContact")
+	primaryCare = OneToOne("PrimaryCare")
 
 	def __repr__(self):
 		return "<Person %s %s (%s)>" % (self.firstName, self.lastName, self.id)

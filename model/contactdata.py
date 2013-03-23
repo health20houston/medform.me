@@ -23,3 +23,13 @@ class EmergencyContact(Entity)
 
 	def __repr__(self):
 		return "<EmergencyContact %s %s (%s)>" % (self.firstName, self.lastName)
+
+class PrimaryCare(Entity)
+	using_options(tablename="primaryCare")
+	people = ManyToOne("Person")
+	firstName = Field(Unicode(30), nullable=False)
+	lastName = Field(Unicode(30), nullable=False)
+	phonenumber = OneToOne("PhoneNumber")
+
+	def __repr__(self):
+		return "<Primary Care %s %s (%s)>" % (self.firstName, self.lastName)
