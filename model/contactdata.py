@@ -4,9 +4,10 @@ from elixir import *
 
 class PhoneNumber(Entity):
 	using_options(tablename="phoneNumber")
-	people = ManyToOne("Person")
+	people = ManyToOne("Patient")
 	emergencyContact = ManyToOne("EmergencyContact")
 	primaryCare = ManyToOne("PrimaryCare")
+	people = ManyToOne("Patient")
 
 	number = Field(Integer(10), nullable=False)
 	numType = Field(Enum("Home", "Mobile", "Work"), nullable=False)
@@ -17,7 +18,7 @@ class PhoneNumber(Entity):
 
 class EmergencyContact(Entity):
 	using_options(tablename="emergencyContact")
-	people = ManyToOne("Person")
+	people = ManyToOne("Patient")
 	firstName = Field(Unicode(30), nullable=False)
 	lastName = Field(Unicode(30), nullable=False)
 	phoneNumber = OneToOne("PhoneNumber", inverse="emergencyContact")
@@ -28,7 +29,7 @@ class EmergencyContact(Entity):
 
 class PrimaryCare(Entity):
 	using_options(tablename="primaryCare")
-	people = ManyToOne("Person")
+	people = ManyToOne("Patient")
 	firstName = Field(Unicode(30), nullable=False)
 	lastName = Field(Unicode(30), nullable=False)
 	phonenumber = OneToOne("PhoneNumber",  inverse="primaryCare")
@@ -38,7 +39,7 @@ class PrimaryCare(Entity):
 
 class InsurancePolicy(Entity):
 	using_options(tablename="InsurancePolicy")
-	people = ManyToOne("Person")
+	people = ManyToOne("Patient")
 	companyName = Field(Unicode(30), nullable=False)
 	dateEffective = Field(Date, nullable=False)
 	policyNumber = Field(Unicode(30), nullable=False)
