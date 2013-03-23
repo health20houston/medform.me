@@ -1,4 +1,5 @@
 import os, sys
+from dateutil.parser import *
 
 sys.path.insert(0, "../")
 
@@ -17,8 +18,12 @@ adam = Person(
 	lastName="Presley",
 	email="adam@adampresley.com",
 	password="password",
-	dob="09/29/1978",
+	dob=parse("09/29/1978"),
 	gender="M"
 )
 
+
 session.commit()
+
+
+print Person.get_by(firstName="Adam")
