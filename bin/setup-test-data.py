@@ -22,8 +22,25 @@ heartProblems = MedicalHistoryGroup(groupName="Heart Problems", sortOrder=1, ite
 	MedicalHistoryItem(itemName="Palpitations", sortOrder=3),
 	MedicalHistoryItem(itemName="Heart Attack", sortOrder=4),
 	MedicalHistoryItem(itemName="Heart Surgery", sortOrder=5),
-
+	MedicalHistoryItem(itemName="Angioplasty", sortOrder=6)
 ])
+
+lungProblems = MedicalHistoryGroup(groupName="Lung Problems", sortOrder=2, items=[
+	MedicalHistoryItem(itemName="Shortness of Breath", sortOrder=1),
+	MedicalHistoryItem(itemName="Emphysema", sortOrder=2),
+	MedicalHistoryItem(itemName="COPD", sortOrder=3),
+	MedicalHistoryItem(itemName="Other", sortOrder=4),
+])
+
+diabetes = MedicalHistoryGroup(groupName="Heart Problems", sortOrder=1, items=[
+	MedicalHistoryItem(itemName="Chest Pain", sortOrder=1),
+	MedicalHistoryItem(itemName="Irregular Heartbeat", sortOrder=2),
+	MedicalHistoryItem(itemName="Palpitations", sortOrder=3),
+	MedicalHistoryItem(itemName="Heart Attack", sortOrder=4),
+	MedicalHistoryItem(itemName="Heart Surgery", sortOrder=5),
+	MedicalHistoryItem(itemName="Angioplasty", sortOrder=6)
+])
+
 adam = Person(
 	firstName="Adam",
 	lastName="Presley",
