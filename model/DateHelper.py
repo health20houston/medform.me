@@ -1,4 +1,4 @@
-from model.Service import Service
+from Service import Service
 
 from datetime import tzinfo, timedelta, datetime
 from dateutil import tz

@@ -1,5 +1,5 @@
 import re, random, string
-from model.Service import Service
+from Service import Service
 
 class StringHelper(Service):
 	articles = ["a", "an", "the", "of", "is"]

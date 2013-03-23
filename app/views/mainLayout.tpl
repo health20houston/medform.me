@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>{{title}} // Medform.ly</title>
+	<title>{{title}} // Medform.me</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="" />
 	<meta name="author" content="" />
@@ -27,7 +27,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="#">Medform.ly</a>
+				<a class="brand" href="#">Medform.me</a>
 				<div class="nav-collapse collapse">
 					<p class="navbar-text pull-right">
 						Logged in as <a href="#" class="navbar-link">Username</a>
@@ -70,7 +70,7 @@
 
 			<div class="span9">
 				<div class="hero-unit">
-					<h1>Welcome to Medform.ly!</h1>
+					<h1>Welcome to Medform.me!</h1>
 					<p>
 						Never fill out a doctor's form again!
 					</p>

@@ -31,6 +31,8 @@ from bottle import route, run, view
 from bottle import TEMPLATE_PATH, request, static_file
 from bottle import install
 
+from model.model import *
+
 # Import all of your controllers here...
 from app.controllers import home
 
@@ -80,8 +82,8 @@ def heartbeat():
 #
 # Uncomment line 84 and comment line 83 to enable session management
 #
-app = bottle.app()
-#app = SessionMiddleware(bottle.app(), config.SESSION_OPTS)
+app = SessionMiddleware(bottle.app(), config.SESSION_OPTS)
+setup_all()
 
 if config.BIND_TO_OUTSIDE_IP:
 	_s = socket(AF_INET, SOCK_DGRAM)
