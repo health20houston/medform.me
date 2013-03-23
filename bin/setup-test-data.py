@@ -86,32 +86,32 @@ bladderProblems = MedicalHistoryGroup(groupName="diabetes", sortOrder=1, items=[
 ])
 
 eatingDisorder = MedicalHistoryGroup(groupName="Eating Disorders", sortOrder=1, items=[
-		MedicalHistoryItem(itemName="Eating Disorder", sortOrder=1)
-	])
+	MedicalHistoryItem(itemName="Eating Disorder", sortOrder=1)
+])
 
 anemia = MedicalHistoryGroup(groupName="Anemia", sortOrder=1, items=[
-		MedicalHistoryItem(itemName="anemia", sortOrder=1)
-	])
+	MedicalHistoryItem(itemName="anemia", sortOrder=1)
+])
 
 cataract = MedicalHistoryGroup(groupName="Cataract", sortOrder=1, items=[
-		MedicalHistoryItem(itemName="Cataract", sortOrder=1)
-	])
+	MedicalHistoryItem(itemName="Cataract", sortOrder=1)
+])
 
 
 glaucoma = MedicalHistoryGroup(groupName="Glaucoma", sortOrder=1, items=[
-		MedicalHistoryItem(itemName="Glaucoma", sortOrder=1)
-	])
+	MedicalHistoryItem(itemName="Glaucoma", sortOrder=1)
+])
 
 thyroid = MedicalHistoryGroup(groupName="Thyroid", sortOrder=1, items=[
-		MedicalHistoryItem(itemName="Hypothyroid", sortOrder=1)
-		MedicalHistoryItem(itemName="Hypethyroid", sortOrder=1)
-	])
+	MedicalHistoryItem(itemName="Hypothyroid", sortOrder=1)
+	MedicalHistoryItem(itemName="Hypethyroid", sortOrder=1)
+])
 
 stomach = MedicalHistoryGroup(groupName="Stomach/GastroIntestinal", sortOrder=1, items=[
-		MedicalHistoryItem(itemName="Duodenal ulcer", sortOrder=1)
-		MedicalHistoryItem(itemName="Gastric/stomach ulcer", sortOrder=1)
-		MedicalHistoryItem(itemName="Heartburn/Reflux", sortOrder=1)
-	])
+	MedicalHistoryItem(itemName="Duodenal ulcer", sortOrder=1)
+	MedicalHistoryItem(itemName="Gastric/stomach ulcer", sortOrder=1)
+	MedicalHistoryItem(itemName="Heartburn/Reflux", sortOrder=1)
+])
 
 adam = Person(
 	firstName="Adam",
