@@ -5,9 +5,9 @@ BIND_TO_OUTSIDE_IP = False
 BIND_TO_PORT = 8080
 ROOT_PATH = os.path.abspath(os.path.dirname(__file__))
 APP_PATH = os.path.join(ROOT_PATH, "app")
-RESOURCES_PATH = os.path.join(ROOT_PATH, "resources")
-BASE_TEMPLATE_PATH = os.path.join(ROOT_PATH, "views")
-SESSION_PATH = os.path.join(ROOT_PATH, "sessions")
+RESOURCES_PATH = os.path.join(APP_PATH, "resources")
+BASE_TEMPLATE_PATH = os.path.join(APP_PATH, "views")
+SESSION_PATH = os.path.join(APP_PATH, "sessions")
 
 
 ENV = "dev"
