@@ -26,6 +26,7 @@ class Patient(Entity):
 	phoneNumbers = OneToMany("PhoneNumber")
 	emergencyContacts = OneToMany("EmergencyContact")
 	primaryCare = OneToOne("PrimaryCare")
+	medicalHistory = OneToMany("MedicalHistoryItem")
 	middleName = Field(Unicode(30), nullable=True)
 	maritalStatus = Field(Enum("Married", "Single", "Divorced"), nullable=True)
 	preferredLang = Field(Unicode(30), nullable=True)

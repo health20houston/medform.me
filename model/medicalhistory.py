@@ -22,6 +22,7 @@ class MedicalHistoryItem(Entity):
 	itemName = Field(Unicode(150), nullable=False)
 	sortOrder = Field(Integer(), nullable=False, default=0)
 	group = ManyToOne("MedicalHistoryGroup")
+	person = ManyToOne("Patient")
 
 	def __repr__(self):
 		return "<MedicalHistoryItem %s (%s)>" % (self.itemName, self.id)
