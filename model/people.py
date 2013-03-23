@@ -5,8 +5,8 @@ from elixir import *
 metadata.bind = config.DB_CONNECTION_STRING
 metadata.bind.echo = True
 
-class Person(Entity):
-	using_options(tablename="person")
+class Patient(Entity):
+	using_options(tablename="patient")
 
 	firstName = Field(Unicode(30), nullable=False)
 	lastName = Field(Unicode(30), nullable=False)
@@ -15,6 +15,12 @@ class Person(Entity):
 	dob = Field(Date(), nullable=False)
 	gender = Field(Enum("M", "F"), nullable=False)
 	willAdvance = Field(Boolean, nullable=True)
+
+	address = Field(Unicode(100), nullable=False)
+	address2 = Field(Unicode(100), nullable=True)
+	city = Field(Unicode(100), nullable=False)
+	state = Field(Unicode(100), nullable=False)
+	postalCode = Field(Unicode(10), nullable=False)
 
 	ssn = Field(Unicode(150), nullable=True)
 	phoneNumbers = OneToMany("PhoneNumber")
@@ -34,4 +40,4 @@ class Person(Entity):
 
 
 	def __repr__(self):
-		return "<Person %s %s (%s)>" % (self.firstName, self.lastName, self.id)
+		return "<Patient %s %s (%s)>" % (self.firstName, self.lastName, self.id)
