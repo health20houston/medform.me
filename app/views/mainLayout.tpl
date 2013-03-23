@@ -82,6 +82,7 @@
 
 				<!--JS-START-->
 				<script src="/resources/js/jquery.js"></script>
+				<script src="/resources/js/bootstrap.js"></script>
 				<!--JS-END-->
 				
 				<!-- CONTENT -->
