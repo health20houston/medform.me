@@ -22,4 +22,4 @@ class EmergencyContact(Entity)
 	relationship = Field(Unicode(150), nullable=False)
 
 	def __repr__(self):
-		return "<EmegencyContact %s %s (%s)>" % (self.firstName, self.lastName)
+		return "<EmergencyContact %s %s (%s)>" % (self.firstName, self.lastName)
