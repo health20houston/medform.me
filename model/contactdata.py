@@ -14,7 +14,7 @@ class PhoneNumber(Entity):
 	exten = Field(Integer(5), nullable=True)
 
 	def __repr__(self):
-		return "<Phone %s %s (%s)>" % (self.number, self.numType)
+		return "<Phone %s %s (%s)>" % (self.number, self.numType, self.id)
 
 class EmergencyContact(Entity):
 	using_options(tablename="emergencyContact")
@@ -25,7 +25,7 @@ class EmergencyContact(Entity):
 	relationship = Field(Unicode(150), nullable=False)
 
 	def __repr__(self):
-		return "<EmergencyContact %s %s >" % (self.firstName, self.lastName)
+		return "<EmergencyContact %s %s (%s)>" % (self.firstName, self.lastName, self.id)
 
 class PrimaryCare(Entity):
 	using_options(tablename="primaryCare")
@@ -35,7 +35,7 @@ class PrimaryCare(Entity):
 	phonenumber = OneToOne("PhoneNumber",  inverse="primaryCare")
 
 	def __repr__(self):
-		return "<Primary Care %s %s (%s)>" % (self.firstName, self.lastName)
+		return "<Primary Care %s %s (%s)>" % (self.firstName, self.lastName, self.id)
 
 class InsurancePolicy(Entity):
 	using_options(tablename="InsurancePolicy")
@@ -47,4 +47,4 @@ class InsurancePolicy(Entity):
 	isPrimary = Field(Boolean, nullable=True)
 
 	def __repr__(self):
-		return "<Insurance %s %s %s (%s)>" % (self.company, self.policyNumber, self.groupNumber)
+		return "<Insurance %s %s %s (%s)>" % (self.company, self.policyNumber, self.groupNumber, self.id)

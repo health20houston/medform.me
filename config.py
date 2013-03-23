@@ -40,12 +40,12 @@ ENVIRONMENTS = {
 	},
 }
 
-DBNAME = "dbname"
+DBNAME = "medformme"
 DBSERVER = ENVIRONMENTS[ENV]["DBSERVER"]
 DBUSER = ENVIRONMENTS[ENV]["DBUSER"]
 DBPASS = ENVIRONMENTS[ENV]["DBPASS"]
 
-DB_CONNECTION_STRING = "sqlite:///%s/medformme.db" % (ROOT_PATH,)
+DB_CONNECTION_STRING = "sqlite:///%s/%s.db" % (ROOT_PATH, DBNAME)
 
 #
 # Session settings
@@ -54,7 +54,7 @@ SESSION_OPTS = {
 	"session.type": "ext:database",
 	"session.cookie_expires": 14400,
 	"session.auto": True,
-	"session.url": "mysql+mysqldb://{0}:{1}@{2}/{3}".format(DBUSER, DBPASS, DBSERVER, DBNAME),
+	"session.url": DB_CONNECTION_STRING,
 	"session.table_name": "admin_session",
 	"session.lock_dir": os.path.join(SESSION_PATH, "lock"),
 	"session.data_dir": os.path.join(SESSION_PATH, "data")
