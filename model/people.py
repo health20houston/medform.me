@@ -14,6 +14,7 @@ class Person(Entity):
 	password = Field(Unicode(150), nullable=False)
 	dob = Field(Date(), nullable=False)
 	gender = Field(Enum("M", "F"), nullable=False)
+	willAdvance = Field(Boolean, nullable=True)
 
 	ssn = Field(Unicode(150), nullable=True)
 	phoneNumbers = OneToMany("PhoneNumber")
