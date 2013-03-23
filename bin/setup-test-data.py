@@ -32,13 +32,49 @@ lungProblems = MedicalHistoryGroup(groupName="Lung Problems", sortOrder=2, items
 	MedicalHistoryItem(itemName="Other", sortOrder=4),
 ])
 
-diabetes = MedicalHistoryGroup(groupName="Heart Problems", sortOrder=1, items=[
-	MedicalHistoryItem(itemName="Chest Pain", sortOrder=1),
-	MedicalHistoryItem(itemName="Irregular Heartbeat", sortOrder=2),
-	MedicalHistoryItem(itemName="Palpitations", sortOrder=3),
-	MedicalHistoryItem(itemName="Heart Attack", sortOrder=4),
-	MedicalHistoryItem(itemName="Heart Surgery", sortOrder=5),
-	MedicalHistoryItem(itemName="Angioplasty", sortOrder=6)
+diabetes = MedicalHistoryGroup(groupName="Diabetes", sortOrder=3, items=[
+	MedicalHistoryItem(itemName="Borderline", sortOrder=1),
+	MedicalHistoryItem(itemName="Diet Controlled", sortOrder=2),
+	MedicalHistoryItem(itemName="Pills", sortOrder=3),
+	MedicalHistoryItem(itemName="Insulin Injection", sortOrder=4)
+])
+
+highBloodPressure = MedicalHistoryGroup(groupName="High Blood Pressure", sortOrder=4, items=[
+	MedicalHistoryItem(itemName="On Medications", sortOrder=1)
+])
+
+kidneyProblems = MedicalHistoryGroup(groupName="Kidney Problems", sortOrder=5, items=[
+	MedicalHistoryItem(itemName="Cancer", sortOrder=1),
+	MedicalHistoryItem(itemName="Dialysis", sortOrder=2)
+])
+
+liverProblems = MedicalHistoryGroup(groupName="Liver Problems", sortOrder=6, items=[
+	MedicalHistoryItem(itemName="Hepatitis A", sortOrder=1),
+	MedicalHistoryItem(itemName="Hepatitis B", sortOrder=2),
+	MedicalHistoryItem(itemName="Hepatitis C", sortOrder=3),
+	MedicalHistoryItem(itemName="Hepatitis D", sortOrder=4),
+	MedicalHistoryItem(itemName="Cirhosis", sortOrder=5)
+])
+
+cancer = MedicalHistoryGroup(groupName="Cancer", sortOrder=7, items=[
+	MedicalHistoryItem(itemName="Bladder", sortOrder=1),
+	MedicalHistoryItem(itemName="Blood (Leukemia)", sortOrder=2),
+	MedicalHistoryItem(itemName="Bone", sortOrder=3),
+	MedicalHistoryItem(itemName="Breast", sortOrder=4),
+	MedicalHistoryItem(itemName="Colon", sortOrder=5),
+	MedicalHistoryItem(itemName="Lung", sortOrder=6),
+	MedicalHistoryItem(itemName="Skin", sortOrder=7)
+])
+
+stroke = MedicalHistoryGroup(groupName="Stroke", sortOrder=8, items=[
+	MedicalHistoryItem(itemName="Mild", sortOrder=1),
+	MedicalHistoryItem(itemName="Severe", sortOrder=2),
+	MedicalHistoryItem(itemName="When?", sortOrder=3),
+	MedicalHistoryItem(itemName="Any residual problems?", sortOrder=4)
+])
+
+bloodClots = MedicalHistoryGroup(groupName="Blood Clots", sortOrder=8, items=[
+	MedicalHistoryItem(itemName="Blood Clots", sortOrder=1)
 ])
 
 bladderProblems = MedicalHistoryGroup(groupName="diabetes", sortOrder=1, items=[
@@ -76,7 +112,6 @@ stomach = MedicalHistoryGroup(groupName="Stomach/GastroIntestinal", sortOrder=1,
 		MedicalHistoryItem(itemName="Gastric/stomach ulcer", sortOrder=1)
 		MedicalHistoryItem(itemName="Heartburn/Reflux", sortOrder=1)
 	])
-
 
 adam = Person(
 	firstName="Adam",
