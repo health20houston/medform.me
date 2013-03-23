@@ -20,6 +20,18 @@ class Person(Entity):
 	phoneNumbers = OneToMany("PhoneNumber")
 	emergencyContacts = OneToMany("EmergencyContact")
 	primaryCare = OneToOne("PrimaryCare")
+	middleName = Field(Unicode(), nullable=True)
+	maritalStatus = Field(Unicode(), nullable=True)
+	preferredLang = Field(Unicode(), nullable=True)
+	occupation = Field(Unicode(), nullable=True) 
+	religion = Field(Unicode(), nullable=True) 
+	race = Field(Unicode(), nullable=True) 
+	ethnicity = Field(Unicode(), nullable=True)
+	weight = Field(Unicode(), nullable=True)
+	height = Field(Unicode(), nullable=True) 
+
+
+
 
 	def __repr__(self):
 		return "<Person %s %s (%s)>" % (self.firstName, self.lastName, self.id)
