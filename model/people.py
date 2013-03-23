@@ -38,7 +38,7 @@ class Patient(Entity):
 	weight = Field(Integer(), nullable=True)
 	height = Field(Unicode(10), nullable=True) 
 
-
+	surgeries = OneToMany("Surgery")
 
 
 	def __repr__(self):
