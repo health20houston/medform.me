@@ -25,6 +25,7 @@ class Patient(Entity):
 	ssn = Field(Unicode(150), nullable=True)
 	phoneNumbers = OneToMany("PhoneNumber")
 	emergencyContacts = OneToMany("EmergencyContact")
+	insurancePolicies = OneToMany("InsurancePolicy")
 	primaryCare = OneToOne("PrimaryCare")
 	medicalHistory = OneToMany("MedicalHistoryItem")
 	middleName = Field(Unicode(30), nullable=True)
