@@ -13,7 +13,7 @@ class PhoneNumber(Entity):
 	def __repr__(self):
 		return "<Phone %s %s (%s)>" % (self.number, self.numType)
 
-class EmergencyContact(Entity)
+class EmergencyContact(Entity):
 	using_options(tablename="emergencyContact")
 	people = ManyToOne("Patient")
 	firstName = Field(Unicode(30), nullable=False)
@@ -22,9 +22,9 @@ class EmergencyContact(Entity)
 	relationship = Field(Unicode(150), nullable=False)
 
 	def __repr__(self):
-		return "<EmergencyContact %s %s (%s)>" % (self.firstName, self.lastName)
+		return "<EmergencyContact %s %s >" % (self.firstName, self.lastName)
 
-class PrimaryCare(Entity)
+class PrimaryCare(Entity):
 	using_options(tablename="primaryCare")
 	people = ManyToOne("Patient")
 	firstName = Field(Unicode(30), nullable=False)
@@ -32,4 +32,4 @@ class PrimaryCare(Entity)
 	phonenumber = OneToOne("PhoneNumber")
 
 	def __repr__(self):
-		return "<Primary Care %s %s (%s)>" % (self.firstName, self.lastName)
+		return "<Primary Care %s %s >" % (self.firstName, self.lastName)
