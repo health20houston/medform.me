@@ -16,6 +16,7 @@ class Person(Entity):
 	gender = Field(Enum("M", "F"), nullable=False)
 
 	ssn = Field(Unicode(150), nullable=True)
-	
+	phoneNumbers = OneToMany("PhoneNumber")
+
 	def __repr__(self):
 		return "<Person %s %s (%s)>" % (self.firstName, self.lastName, self.id)

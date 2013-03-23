@@ -19,7 +19,10 @@ adam = Person(
 	email="adam@adampresley.com",
 	password="password",
 	dob=parse("09/29/1978"),
-	gender="M"
+	gender="M",
+	phoneNumbers=[
+		PhoneNumber(number="9729995466", numType="Mobile")
+	]
 )
 
 
