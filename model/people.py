@@ -19,6 +19,7 @@ class Person(Entity):
 	ssn = Field(Unicode(150), nullable=True)
 	phoneNumbers = OneToMany("PhoneNumber")
 	emergencyContacts = OneToMany("EmergencyContact")
+	insurancePolicies = OneToMany("InsurancePolicy")
 	primaryCare = OneToOne("PrimaryCare")
 
 	def __repr__(self):
