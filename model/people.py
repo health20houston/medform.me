@@ -2,6 +2,9 @@ import config
 
 from elixir import *
 
+metadata.bind = config.DB_CONNECTION_STRING
+metadata.bind.echo = True
+
 class Person(Entity):
 	using_options(tablename="person")
 
@@ -14,3 +17,6 @@ class Person(Entity):
 
 	ssn = Field(Unicode(150), nullable=True)
 	
+	def __repr__(self):
+		return "<Person %s %s (%s)>" % (self.firstName, self.lastName, self.id)
+		

@@ -3,7 +3,8 @@ import os
 DEBUG = True
 BIND_TO_OUTSIDE_IP = False
 BIND_TO_PORT = 8080
-ROOT_PATH = os.path.join(os.path.abspath(os.path.dirname(__file__)), "app")
+ROOT_PATH = os.path.abspath(os.path.dirname(__file__))
+APP_PATH = os.path.join(ROOT_PATH, "app")
 RESOURCES_PATH = os.path.join(ROOT_PATH, "resources")
 BASE_TEMPLATE_PATH = os.path.join(ROOT_PATH, "views")
 SESSION_PATH = os.path.join(ROOT_PATH, "sessions")
@@ -44,6 +45,7 @@ DBSERVER = ENVIRONMENTS[ENV]["DBSERVER"]
 DBUSER = ENVIRONMENTS[ENV]["DBUSER"]
 DBPASS = ENVIRONMENTS[ENV]["DBPASS"]
 
+DB_CONNECTION_STRING = "sqlite:///%s/medformme.db" % (ROOT_PATH,)
 
 #
 # Session settings

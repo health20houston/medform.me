@@ -1,8 +1,14 @@
-import config 
+import os, sys
+
+sys.path.insert(0, "../")
+
 
 from elixir import *
-
+from config import *
 from model.model import *
+
+metadata.bind = config.DB_CONNECTION_STRING
+metadata.bind.echo = True
 
 setup_all(True)
 
