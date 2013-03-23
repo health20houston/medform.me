@@ -8,3 +8,6 @@ class PhoneNumber(Entity):
 	number = Field(Integer(10), nullable=False)
 	numType = Field(Enum("Home", "Mobile", "Work"), nullable=False)
 	exten = Field(Integer(5), nullable=False)
+
+	def __repr__(self):
+		return "<Phone %s %s (%s)>" % (self.number, self.numType)
