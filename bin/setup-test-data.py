@@ -252,8 +252,8 @@ adam = Patient(
 	state="Texas",
 	postalCode="77546",
 	insurancePolicies=[
-		InsurancePolicy(groupNumber="grp123", policyNumber="pol456", dateEffective=parse("01/01/2013"), companyName="First Priority Insurnace", isPrimary=True),
-		InsurancePolicy(groupNumber="grp000", policyNumber="pol111", dateEffective=parse("02/01/2013"), companyName="Second Priority Insurnace", isPrimary=False)
+		InsurancePolicy(groupNumber="grp123", policyNumber="pol456", dateEffective=parse("01/01/2013"), companyName="First Priority Insurance", isPrimary=True),
+		InsurancePolicy(groupNumber="grp000", policyNumber="pol111", dateEffective=parse("02/01/2013"), companyName="Second Priority Insurance", isPrimary=False)
 	],
 	medicalHistory=[
 		MedicalHistoryItem.get_by(itemName="Pills"),
