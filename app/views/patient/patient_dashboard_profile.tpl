@@ -241,7 +241,7 @@
 			<div id="collapseHistory{{historyIx}}" class="accordion-body collapse">
 				<div class="accordion-inner">
 				% for historyItem in historyGroup.items:
-				{{historyItem.itemName}}: <input type="checkbox" value="Yes">Yes</input><br />
+				<input type="checkbox" value="Yes" /> {{historyItem.itemName}}<br />
 				% end
 				</div>
 			</div>
