@@ -63,7 +63,7 @@ if config.DEBUG:
 	for it in paths:
 		print "   %s" % it
 
-	print "\n%s\n" % datetime.today()
+	print "\n%s\n" % datetime.datetime.today()
 
 
 #

@@ -19,4 +19,11 @@ def patientDashboardProfile(viewData):
 @route("/api/patient/getcode")
 @patientAccount
 def api_patientGetCode(viewData):
-	return PatientCode.generateNewCode()
+	#
+	# Create a patient code. If we have an active code
+	# that isn't expired go grab it.
+	#
+	code = PatientCode.generateNewCode(patient=request.appSession["patient"])
+	session.commit()
+
+	return code

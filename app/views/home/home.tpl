@@ -1,7 +1,7 @@
 <div class="row-fluid">
 	<div class="span6">
 		<div class="hero-unit hero-blue">
-			<form method="post">
+			<form method="post" id="signUpForm">
 			  <fieldset>
 			    <legend>Log In / Sign Up</legend>
 					  <div class="control-group">
@@ -12,15 +12,15 @@
 					  <div class="control-group">
 					    <div class="controls">
 					      <input class="span7" type="password" id="inputPassword" placeholder="Password" name="pwd">
-					    	% if loginMessage is not None:
-				    		<span class="help-inline">{{!loginMessage}}</span>
-				    		% end
+
+				    		<span class="help-inline"></span>
+
 					    </div>
 					  </div>
 					  <div class="control-group">
 					    <div class="controls">
 					      </label>
-					      <button type="btn" class="btn btn-primary btn-large" name="userBtn">Sign in/Sign Up</button>
+					      <button type="btn" class="btn btn-primary btn-large" id="userBtn">Sign in/Sign Up</button>
 					    </div>
 					  </div>
 			  </fieldset>
@@ -68,14 +68,13 @@
 		</div>
 	</div>
 	
-		%if len(signupMessage) != 0:
 			<div id="signUpPrompt" class="modal fade">
 			  <div class="modal-header">
 			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			    <h3>Sign Up</h3>
 			  </div>
 			  <div class="modal-body">
-			    <p>{{!signupMessage}}</p>
+			    <p></p>
 			  </div>
 			  <div class="modal-footer">
 			    <a href="javascript:void" class="btn" id="signUpNo">No</a>
@@ -85,9 +84,12 @@
 			<script>
 				$(function() {
 					new Medform.Patient.signUp();
+
+				$.post("/api/patient/validateCred", $("#signUpForm").serialize(), function(data) {
+					console.log(data);
+				});
 				});
 			</script>
-		%end
 
 
 </div>
