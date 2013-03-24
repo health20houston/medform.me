@@ -85,9 +85,9 @@ Medform.Patient.signUp = function() {
 			}
 			else {
 				if (!data.isNewUser) {
-					$("#signUpMessage").html("It seems the email <b>"+ data.email+"</b> does not exist would you like to sign up?")
 					$("#helpinline").html(data.message).show();
 				} else {
+					$("#signUpMessage").html("It seems the email <b>"+ data.email+"</b> does not exist would you like to sign up?");
 					self.showDialog();
 				}
 			}
