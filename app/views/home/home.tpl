@@ -70,22 +70,24 @@
 
 	</div>
 	<div class="clear"></div>
+	<div class="row mid-grey">
+
 	<div class="container-fluid">
-		<hr>
+		
 	      <!-- Three columns of text below the carousel -->
       <div class="row-fluid marketing">
         <div class="span4">
-          <img class="img-circle" data-src="holder.js/140x140">
+          <img src="/resources/images/marketing-lock.png">
           <h2>Secure</h2>
           <p>HIPAA-secure encrypted service with temporary time-sensitive pass codes</p>
         </div><!-- /.span4 -->
         <div class="span4">
-          <img class="img-circle" data-src="holder.js/140x140">
+          <img src="/resources/images/marketing-screen.png">
           <h2>Accessible</h2>
           <p>Generate access code on your mobile phone, tablet or computer at any time</p>
         </div><!-- /.span4 -->
         <div class="span4">
-          <img class="img-circle" data-src="holder.js/140x140">
+          <img src="/resources/images/marketing-clock.png">
           <h2>Save Time</h2>
           <p>All your registration information is prepared at your leisure and ready for the doctor</p>
         </div><!-- /.span4 -->
@@ -111,6 +113,7 @@
 			new Medform.Patient.signUp();
 		});
 	</script>
+	</div>
 	</div><!-- Container for marketing -->
 </div><!-- Row Fluid End -->
 

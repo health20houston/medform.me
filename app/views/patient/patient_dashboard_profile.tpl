@@ -283,9 +283,15 @@
 					
 					<div class="row formRow">
 				%end
+				%flag = False
+				%for patSurgery in patient.surgeries:
+				%	if surgery.name == patSurgery.name:
+				%		flag = True
+				%	end
+				%end
 			<div class="span3">
 				<label class="checkbox">
-				  <input type="checkbox" id="surgery{{!i}}" value="{{!surgery.name}}">{{!surgery.name}}
+				  <input type="checkbox" id="surgery{{!i}}" value="{{!surgery.name}}" {{!'checked="checked"' if flag else ''}}>{{!surgery.name}}
 				</label>
 			</div> 
 				%if i%3 == 2 or i == len(surgeries)-1:
@@ -315,9 +321,24 @@
 		<label class="control-label">Please check all of your family history</label>
 		  <div class="controls">
 			%for i, familyHistory in enumerate(familyHistories):
-			<label class="checkbox inline">
-			  <input type="checkbox" id="familyHistory{{!i}}">{{!familyHistory.name}}
-			</label><br/>
+				%if i%3 == 0 & i != len(familyHistories):
+			<div class="row formRow">
+				%end
+				%flag = False
+				%for items in patient.familyHistories:
+				%	if familyHistory.name == items.name:
+				%		flag = True
+				%	end
+				%end
+
+				<div class="span4">
+					<label class="checkbox">
+					  <input type="checkbox" id="{{!familyHistory.name}}" {{!'checked="checked"' if flag else ''}} >{{!familyHistory.name}}
+					</label>
+				</div>
+				%if i%3 == 2 or i == len(familyHistories)-1:
+					</div>
+				%end
 			%end
 		  </div>
 		</div>
@@ -332,9 +353,16 @@
 					
 					<div class="row formRow">
 				%end
+
+				%flag = False
+				%for patAllerg in patient.allergies:
+				%	if allergy.name == patAllerg.name:
+				%		flag = True
+				%	end
+				%end
 			<div class="span3">
 				<label class="checkbox">
-				  <input type="checkbox" id="allergy{{!i}}" value="{{!allergy.name}}">{{!allergy.name}}
+				  <input type="checkbox" id="allergy{{!i}}" value="{{!allergy.name}}" {{!'checked="checked"' if flag else ''}}>{{!allergy.name}}
 				</label>
 			</div> 
 				%if i%3 == 2 or i == len(allergies)-1:

@@ -116,6 +116,8 @@ cataracts = Surgery(name="Cataracts", sortOrder=1)
 
 lasik = Surgery(name="LASIK", sortOrder=1)
 
+colonoscopy = Surgery(name="Colonsocopy", sortOrder=1)
+
 tonsillectomy = Surgery(name="Tonsillectomy", sortorder=1)
 
 thyroidectomy = Surgery(name="Thyroidectomy", sortorder=1)
@@ -144,8 +146,6 @@ hysterectomy = Surgery(name="Hysterectomy", sortorder=1)
 
 endoscopy = Surgery(name="Endoscopy", sortorder=1)
 
-colonoscopy = Surgery(name="Colonoscopy", sortorder=1)
-
 hernia = Surgery(name="Hernia", sortorder=1)
 
 spinalSurgery = Surgery(name="Spinal Surgery", sortorder=1)
@@ -160,23 +160,41 @@ sSec = Surgery(name="C-Section", sortorder=1)
 
 orthopedicJoints = Surgery(name="Orthopedic/joints", sortorder=1)
 
-penicillin = Allergy(name="Penicillin", sortorder=1)
+
 hypertension = FamilyHistory(name="Hypertension", sortorder=1)
+
 coronaryArteryDisease = FamilyHistory(name="Coronary Artery Disease", sortorder=1)
+
 elevatedCholesterol = FamilyHistory(name="Elevated Cholesterol", sortorder=1)
+
 stroke = FamilyHistory(name="Stroke", sortorder=1)
+
 diabetes = FamilyHistory(name="Diabetes", sortorder=1)
+
 thyroidfh = FamilyHistory(name="Thyroid", sortorder=1)
+
 renalDiseaseDialysis = FamilyHistory(name="Renal Disease/Dialysis", sortorder=1)
+
 cancer = FamilyHistory(name="Cancer", sortorder=1)
+
 arthritis = FamilyHistory(name="Arthritis", sortorder=1)
+
 tb = FamilyHistory(name="TB", sortorder=1)
+
 lungDisease = FamilyHistory(name="Lung disease", sortorder=1)
+
 asthma = FamilyHistory(name="Asthma", sortorder=1)
+
 headache = FamilyHistory(name="Headache", sortorder=1)
+
 seizures = FamilyHistory(name="Seizures", sortorder=1)
+
 mentalIllness = FamilyHistory(name="Mental Illness", sortorder=1)
+
 addictions = FamilyHistory(name="Addictions", sortorder=1)
+
+
+penicillin = Allergy(name="Penicillin", sortorder=1)
 
 peanuts = Allergy(name="Peanuts", sortorder=1)
 
@@ -217,6 +235,8 @@ history = FamilyHistory(name="testHistory",sortorder=1)
 
 
 
+
+
 adam = Patient(
 	firstName="Adam",
 	lastName="Presley",
@@ -245,6 +265,22 @@ adam = Patient(
 	],
 	primaryCare=PrimaryCare(firstName="Jose", lastName="JP", phoneNumber=PhoneNumber(number="(972)999-5000", numType="Mobile")),
 	hospitalization=Hospitalization(forWhat="Ran into a pole", when=parse("09/29/1998"))
+	primaryCare=PrimaryCare(firstName="Jose", lastName="JP", phoneNumber=PhoneNumber(number="9729995000", numType="Mobile")),
+	surgeries=[
+		lasik,
+		colonoscopy
+	],
+	allergies=[
+		peanuts,
+		milk,
+		shrimp
+	],
+	familyHistories=[
+		asthma,
+		lungDisease,
+		headache,
+		renalDiseaseDialysis
+	]
 )
 
 PatientCode.generateNewCode(patient=adam)

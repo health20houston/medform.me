@@ -21,9 +21,11 @@
 
 .hero-blue {
     background-color: #ddeffa;
+    height: 320px;
 }
 .hero-green {
     background-color: #ddfadd;
+    height: 320px;
 }
 
 .hero-bg {
@@ -49,7 +51,8 @@
 }
 
 /* Center align the text within the three columns below the carousel */
-.marketing {
+.mid-grey {
+  padding: 20px 0 20px;
   background-color: #efefef;
 }
 .marketing .span4 {
