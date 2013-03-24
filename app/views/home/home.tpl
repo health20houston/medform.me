@@ -74,7 +74,7 @@
 	    <h3>Sign Up</h3>
 	  </div>
 	  <div class="modal-body">
-	    <p></p>
+	    <p><span id="signUpMessage"></span></p>
 	  </div>
 	  <div class="modal-footer">
 	    <a href="javascript:void" class="btn" id="signUpNo">No</a>
