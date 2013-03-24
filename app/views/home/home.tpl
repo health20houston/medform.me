@@ -1,7 +1,7 @@
 <div class="row-fluid">
 	<div class="span6">
 		<div class="hero-unit">
-			<form>
+			<form method="post">
 			  <fieldset>
 			    <legend>Sign Up/Login</legend>
 			    <p>Type in your email and password to login, if you are not a member this will automaticly take you to the sign up page.</p>
@@ -28,7 +28,7 @@
 
 	<div class="span6">
 		<div class="hero-unit">
-			<form>
+			<form method="post">
 			  <fieldset>
 			    <legend>For Doctor, Please Enter Code</legend>
 			    <p>Enter the patient provided code here!</p>
