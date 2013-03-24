@@ -20,7 +20,7 @@
 					  <div class="control-group">
 					    <div class="controls">
 					      </label>
-					      <button type="submit" class="btn btn-primary btn-large" name="userBtn">Sign in/Sign Up</button>
+					      <button type="btn" class="btn btn-primary btn-large" name="userBtn">Sign in/Sign Up</button>
 					    </div>
 					  </div>
 			  </fieldset>
@@ -68,24 +68,28 @@
 		</div>
 	</div>
 	
-		%if signupMessage is not None:
-		<div class="modal hide fade">
-		  <div class="modal-header">
-		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		    <h3>Oh No!</h3>
-		  </div>
-		  <div class="modal-body">
-		    <p>{{!signupMessage}}</p>
-		  </div>
-		  <div class="modal-footer">
-		    <a href="#" class="btn">Close</a>
-		    <a href="#" class="btn btn-primary">Save changes</a>
-		  </div>
-		</div>
-		<script></script>
+		%if len(signupMessage) != 0:
+			<div id="signUpPrompt" class="modal fade">
+			  <div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			    <h3>Sign Up</h3>
+			  </div>
+			  <div class="modal-body">
+			    <p>{{!signupMessage}}</p>
+			  </div>
+			  <div class="modal-footer">
+			    <a href="javascript:void" class="btn" id="signUpNo">No</a>
+			    <a href="javascipt:void" class="btn btn-primary" id="signUpYes">Yes</a>
+			  </div>
+			</div>
+			<script>
+				$(function() {
+					new Medform.Patient.signUp();
+				});
+			</script>
 		%end
 
-</div>
 
+</div>
 
 % rebase homeLayout title = "Home"

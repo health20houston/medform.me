@@ -33,3 +33,37 @@ Medform.Patient.GenerateCode = function() {
 		self.generateCodeModal.modal("hide");
 	};
 };
+
+Medform.Patient.signUp = function() {
+	var self = this;
+
+	/*
+	 * Constructor
+	 */
+	self.signUpPrompt = $("#signUpPrompt");
+
+	self.signUpPrompt.modal({
+		show: false
+	});
+
+	$("#signUpNo").click(function() {
+		self.hideDialog();
+	});
+
+	$("#signUpYes").click(function() {
+		self.hideDialog();
+	});
+	/*
+	 * Methods
+	 */
+	self.showDialog = function() {
+
+		self.signUpPrompt.modal("show");
+	};
+
+	self.hideDialog = function() {
+		self.signUpPrompt.modal("hide");
+	};
+};
+
+
