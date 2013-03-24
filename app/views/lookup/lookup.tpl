@@ -35,6 +35,7 @@
 			<tr><td>Weight</td><td>{{patient.weight}}</td></tr>
 			<tr><td>Height</td><td>{{patient.height}}</td></tr>
 			<tr><td>Emergency Contacts</td><td>
+				% if len(patient.emergencyContacts) > 0:
 				<table class="table table-striped">
 					<thead>
 						<tr><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Relationship</th></tr>
@@ -45,8 +46,12 @@
 						% end
 					</tbody>
 				</table>
+				% else:
+				None
+				% end
 			</td></tr>
 			<tr><td>Insurance Policies</td><td>
+				% if len(patient.insurancePolicies) > 0:
 				<table class="table table-striped">
 					<thead>
 						<tr><th>Company Name</th><th>Date Effective</th><th>Policy #</th><th>Group #</th><th>Is Primary</th></tr>
@@ -57,20 +62,26 @@
 						% end
 					</tbody>
 				</table>
+				% else:
+				None
+				% end
 			</td></tr>
 			<tr><td>Primary Care</td><td>
+				% if patient.primaryCare is not None:
 				<table class="table table-striped">
 					<thead>
 						<tr><th>First Name</th><th>Last Name</th><th>Phone Number</th></tr>
 					</thead>
-					<tbody>
-						% if patient.primaryCare is not None:
+					<tbody>						
 						<tr><td>{{patient.primaryCare.firstName}}</td><td>{{patient.primaryCare.lastName}}</td><td>{{patient.primaryCare.phoneNumber}}</td></tr>
-						% end
 					</tbody>
 				</table>
+				% else:
+				None
+				% end
 			</td></tr>
 			<tr><td>Medical History</td><td>
+				% if len(patient.medicalHistory) > 0:
 				<table class="table table-striped">
 					<thead>
 						<tr><th>Item Name</th><th>Sort Order</th></tr>
@@ -81,8 +92,12 @@
 						% end
 					</tbody>
 				</table>
+				% else:
+				None
+				% end
 			</td></tr>
 			<tr><td>Surgeries</td><td>
+				% if len(patient.surgeries) > 0:
 				<table class="table table-striped">
 					<thead>
 						<tr><th>Name</th><th>Sort Order</th></tr>
@@ -93,6 +108,9 @@
 						% end
 					</tbody>
 				</table>
+				% else:
+				None
+				% end
 			</td></tr>
 			<tr><td>Marital Status</td><td>{{patient.maritalStatus}}</td></tr>
 			<tr><td>Has Advance Will</td><td>{{patient.willAdvance}}</td></tr>
