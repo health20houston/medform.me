@@ -9,7 +9,7 @@ def preRequest(callback):
 			#
 			# Setup session and environment stuff
 			#
-			request.session = request.environ.get("beaker.session")
+			request.appSession = request.environ.get("beaker.session")
 			request.all = dict(request.query.items() + request.forms.items())
 
 			request.factory = Factory()

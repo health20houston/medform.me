@@ -1,4 +1,6 @@
 import config 
+import random
+import string
 
 from elixir import *
 
@@ -40,6 +42,26 @@ class Patient(Entity):
 
 	surgeries = OneToMany("Surgery")
 
+	code = OneToMany("PatientCode")
 
 	def __repr__(self):
 		return "<Patient %s %s (%s)>" % (self.firstName, self.lastName, self.id)
+
+
+class PatientCode(Entity):
+	using_options(tablename="patientcode")
+
+	patient = ManyToOne("Patient")
+	code = Field(Unicode(5), nullable=False)
+	expirationDateTime = Field(DateTime(), nullable=False)
+
+	def __repr__(self):
+		return "<PatientCode %s>" % self.code
+
+	@staticmethod
+	def generateNewCode():
+		return "".join(random.choice(string.ascii_letters) for i in xrange(8)).lower()
+
+	@staticmethod
+	def validateCode(code):
+		return PatientCode.get_by(code=code)
