@@ -4,4 +4,6 @@ from elixir import *
 from people import *
 from contactdata import *
 from medicalhistory import *
-from surgery import *
+from surgeries import *
+from allergies import *
+from medications import *
