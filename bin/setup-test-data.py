@@ -245,7 +245,7 @@ adam = Patient(
 	dob=parse("09/29/1978"),
 	gender="M",
 	phoneNumbers=[
-		PhoneNumber(number="9729995466", numType="Mobile")
+		PhoneNumber(number="(972)999-5466", numType="Mobile")
 	],
 	address="555 Another Way",
 	city="Friendswood",
@@ -260,9 +260,11 @@ adam = Patient(
 		MedicalHistoryItem.get_by(itemName="Glaucoma")
 	],
 	emergencyContacts=[
-		EmergencyContact(firstName="Johny", lastName="Ive", phoneNumber=PhoneNumber(number="9729995412", numType="Mobile"), relationship="Designer"),
-		EmergencyContact(firstName="Adam", lastName="Sandler", phoneNumber=PhoneNumber(number="9729995434", numType="Mobile"), relationship="Actor")
+		EmergencyContact(firstName="Johny", lastName="Ive", phoneNumber=PhoneNumber(number="(972)999-5412", numType="Mobile"), relationship="Designer"),
+		EmergencyContact(firstName="Adam", lastName="Sandler", phoneNumber=PhoneNumber(number="(972)999-5434", numType="Mobile"), relationship="Actor")
 	],
+	primaryCare=PrimaryCare(firstName="Jose", lastName="JP", phoneNumber=PhoneNumber(number="(972)999-5000", numType="Mobile")),
+	hospitalization=Hospitalization(forWhat="Ran into a pole", when=parse("09/29/1998"))
 	primaryCare=PrimaryCare(firstName="Jose", lastName="JP", phoneNumber=PhoneNumber(number="9729995000", numType="Mobile")),
 	surgeries=[
 		lasik,

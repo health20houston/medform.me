@@ -140,7 +140,7 @@
 						<tr>
 							<td>{{ec.firstName}}</td>
 							<td>{{ec.lastName}}</td>
-							<td>{{ec.phoneNumber}}</td>
+							<td>{{ec.phoneNumber.number}}</td>
 							<td>{{ec.relationship}}</td>
 						</tr>
 					% end
@@ -200,7 +200,7 @@
 					<tr>
 						<td>{{patient.primaryCare.firstName}}</td>
 						<td>{{patient.primaryCare.lastName}}</td>
-						<td>{{patient.primaryCare.phoneNumber}}</td>
+						<td>{{patient.primaryCare.phoneNumber.number}}</td>
 					</tr>
 				</tbody>
 			</table>

@@ -306,13 +306,13 @@
 	<div class="control-group">
 	  <label class="control-label">For What?</label>
 	  <div class="controls">
-		<textarea id="hospitalizationWhy" name="hospitalizationWhy" type="text" placeholder="Why were you hospitalized?" rows="3"></textarea>
+		<textarea id="hospitalizationWhy" name="hospitalizationWhy" type="text" placeholder="Why were you hospitalized?" rows="3">{{patient.hospitalization.forWhat}}</textarea>
 	  </div>
 	</div>
 	<div class="control-group">
 	  <label class="control-label">When?</label>
 	  <div class="controls">
-		<input id="hospitalizationWhen" name="hospitalizationWhen" type="text" placeholder="When were you hospitalized?" class="input-xlarge" required="">
+		<input id="hospitalizationWhen" name="hospitalizationWhen" type="text" placeholder="When were you hospitalized?" class="input-xlarge" required="" value="{{patient.hospitalization.when}}">
 	  </div>
 	</div>
   </div>
