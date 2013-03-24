@@ -33,4 +33,4 @@
 
 </script>
 
-% rebase mainLayout title = "Home"
+% rebase mainLayout title="Dashboard"
