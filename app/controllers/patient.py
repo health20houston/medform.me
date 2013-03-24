@@ -14,6 +14,7 @@ def patientDashboard(viewData):
 @view("patient_dashboard_profile")
 @patientAccount
 def patientDashboardProfile(viewData):
+	viewData["surgeries"] = Surgery.query.all()
 	return viewData
 
 @route("/api/patient/getcode")
