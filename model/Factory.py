@@ -6,10 +6,10 @@ class Factory:
 		pass
 
 	def getDateHelper(self):
-		return self._getService(DateHelper(self.db), [])
+		return self._getService(DateHelper(), [])
 
 	def getStringHelper(self):
-		return self._getService(StringHelper(self.db), [])
+		return self._getService(StringHelper(), [])
 		
 
 	def _getService(self, service, stuff):

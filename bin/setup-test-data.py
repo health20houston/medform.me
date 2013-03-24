@@ -126,10 +126,16 @@ adam = Patient(
 	address="555 Another Way",
 	city="Friendswood",
 	state="Texas",
-	postalCode="77546"
+	postalCode="77546",
+
+	medicalHistory=[
+		MedicalHistoryItem.get_by(itemName="Pills"),
+		MedicalHistoryItem.get_by(itemName="Glaucoma")
+	]
 )
 
 PatientCode.generateNewCode(patient=adam)
+
 
 
 session.commit()

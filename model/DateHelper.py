@@ -2,6 +2,7 @@ from Service import Service
 
 from datetime import tzinfo, timedelta, datetime
 from dateutil import tz
+from dateutil.parser import parse
 
 class DateHelper(Service):
 	utc = tz.gettz("UTC")
@@ -12,8 +13,7 @@ class DateHelper(Service):
 		"%Y-%m-%d": "yyyy-MM-dd"
 	}
 
-	def __init__(self, db, timezone = "UTC", dateFormat = "%m/%d/%Y", timeFormat = "%I:%M %p"):
-		self.db = db
+	def __init__(self, timezone = "UTC", dateFormat = "%m/%d/%Y", timeFormat = "%I:%M %p"):
 		self._timezone = timezone
 		self._dateFormat = dateFormat
 		self._timeFormat = timeFormat
@@ -83,3 +83,5 @@ class DateHelper(Service):
 
 		return (newStart, newEnd)
 		
+	def parseDateString(self, d):
+		return parse(d)

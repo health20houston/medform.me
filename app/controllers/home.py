@@ -55,7 +55,7 @@ def home():
 			viewData["nameHospitalValue"] = request.all["nameHospital"]
 
 		if viewData["codeRedirect"]:
-			redirect("/lookup?code=" + request.all["code"])
+			redirect("/lookup/" + request.all["code"])
 
 	if "userBtn" in request.all:
 		viewData["email"] = request.all["email"]
