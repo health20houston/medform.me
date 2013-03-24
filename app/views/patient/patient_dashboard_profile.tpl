@@ -249,7 +249,19 @@
 		% end
 	</div>
   </div>
-  <div class="tab-pane" id="surgeries">Message</div>
+  <div class="tab-pane" id="surgeries">
+  	<!-- Radio input-->
+	<div class="control-group">
+		<label class="control-label">Have you had an Surgeries</label>
+		  <div class="controls">
+		  	%for i, surgery in enumerate(surgeries):
+			<label class="checkbox inline">
+			  <input type="checkbox" id="surgery{{!i}}" value="{{!surgery.name}}">{{!surgery.name}}
+			</label>
+			%end
+		  </div>
+		</div>
+  </div>
   <div class="tab-pane" id="hospitalization">...</div>
   <div class="tab-pane" id="family-history">...</div>
   <div class="tab-pane" id="allergies">...</div>
