@@ -67,11 +67,11 @@
 			</form>
 		</div>
 			
-		
+
 	</div>
-<hr>
+	<div class="clear"></div>
 	<div class="container-fluid">
-		
+		<hr>
 	      <!-- Three columns of text below the carousel -->
       <div class="row-fluid marketing">
         <div class="span4">
