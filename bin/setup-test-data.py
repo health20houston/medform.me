@@ -77,7 +77,7 @@ bloodClots = MedicalHistoryGroup(groupName="Blood Clots", sortOrder=8, items=[
 	MedicalHistoryItem(itemName="Blood Clots", sortOrder=1)
 ])
 
-bladderProblems = MedicalHistoryGroup(groupName="Bladder Problems?", sortOrder=1, items=[
+bladderProblems = MedicalHistoryGroup(groupName="Bladder Problems", sortOrder=1, items=[
 	MedicalHistoryItem(itemName="Stress Incontinence", sortOrder=1),
 	MedicalHistoryItem(itemName="Difficulty urinating", sortOrder=2),
 	MedicalHistoryItem(itemName="Night time urination (#)", sortOrder=3),
@@ -169,7 +169,7 @@ elevatedCholesterol = FamilyHistory(name="Elevated Cholesterol", sortorder=1)
 
 stroke = FamilyHistory(name="Stroke", sortorder=1)
 
-diabetes = FamilyHistory(name="Diabetes", sortorder=1)
+diabetesfh = FamilyHistory(name="Diabetes", sortorder=1)
 
 thyroidfh = FamilyHistory(name="Thyroid", sortorder=1)
 
@@ -245,25 +245,25 @@ adam = Patient(
 	dob=parse("09/29/1978"),
 	gender="M",
 	phoneNumbers=[
-		PhoneNumber(number="(972)999-5466", numType="Mobile")
+		PhoneNumber(number="(972) 999-5466", numType="Mobile")
 	],
 	address="555 Another Way",
 	city="Friendswood",
 	state="Texas",
 	postalCode="77546",
 	insurancePolicies=[
-		InsurancePolicy(groupNumber="grp123", policyNumber="pol456", dateEffective=parse("01/01/2013"), companyName="First Priority Insurnace", isPrimary=True),
-		InsurancePolicy(groupNumber="grp000", policyNumber="pol111", dateEffective=parse("02/01/2013"), companyName="Second Priority Insurnace", isPrimary=False)
+		InsurancePolicy(groupNumber="grp123", policyNumber="pol456", dateEffective=parse("01/01/2013"), companyName="First Priority Insurance", isPrimary=True),
+		InsurancePolicy(groupNumber="grp000", policyNumber="pol111", dateEffective=parse("02/01/2013"), companyName="Second Priority Insurance", isPrimary=False)
 	],
 	medicalHistory=[
 		MedicalHistoryItem.get_by(itemName="Pills"),
 		MedicalHistoryItem.get_by(itemName="Glaucoma")
 	],
 	emergencyContacts=[
-		EmergencyContact(firstName="Johny", lastName="Ive", phoneNumber=PhoneNumber(number="(972)999-5412", numType="Mobile"), relationship="Designer"),
-		EmergencyContact(firstName="Adam", lastName="Sandler", phoneNumber=PhoneNumber(number="(972)999-5434", numType="Mobile"), relationship="Actor")
+		EmergencyContact(firstName="Johny", lastName="Ive", phoneNumber=PhoneNumber(number="(972) 999-5412", numType="Mobile"), relationship="Designer"),
+		EmergencyContact(firstName="Adam", lastName="Sandler", phoneNumber=PhoneNumber(number="(972) 999-5434", numType="Mobile"), relationship="Actor")
 	],
-	primaryCare=PrimaryCare(firstName="Jose", lastName="JP", phoneNumber=PhoneNumber(number="(972)999-5000", numType="Mobile")),
+	primaryCare=PrimaryCare(firstName="Jose", lastName="JP", phoneNumber=PhoneNumber(number="(972) 999-5000", numType="Mobile")),
 	hospitalization=Hospitalization(forWhat="Ran into a pole", when=parse("09/29/1998")),
 	surgeries=[
 		lasik,
