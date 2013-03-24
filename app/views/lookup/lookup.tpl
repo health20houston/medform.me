@@ -9,7 +9,7 @@
 				</tr>
 				<tr>
 					<td><strong>Middle Name</strong></td>
-					<td>{{patient.middleName}}</td>
+					<td>{{!patient.middleName if patient.middleName is not None else ''}}</td>
 				</tr>
 				<tr>
 					<td><strong>Last Name</strong></td>
@@ -21,39 +21,39 @@
 				</tr>
 				<tr>
 					<td><strong>Race</strong></td>
-					<td>{{patient.race}}</td>
+					<td>{{patient.race if patient.race is not None else ''}}</td>
 				</tr>
 				<tr>
 					<td><strong>Ethnicity</strong></td>
-					<td>{{patient.ethnicity}}</td>
+					<td>{{patient.ethnicity  if patient.ethnicity is not None else ''}}</td>
 				</tr>
 				<tr>
 					<td><strong>Weight</strong></td>
-					<td>{{patient.weight}}</td>
+					<td>{{patient.weight  if patient.weight is not None else ''}}</td>
 				</tr>
 				<tr>
 					<td><strong>Height</strong></td>
-					<td>{{patient.height}}</td>
+					<td>{{patient.height  if patient.height is not None else ''}}</td>
 				</tr>
 				<tr>
 					<td><strong>SSN</strong></td>
-					<td>{{patient.ssn}}</td>
+					<td>{{patient.ssn  if patient.ssn is not None else ''}}</td>
 				</tr>
 				<tr>
 					<td><strong>Gender</strong></td>
-					<td>{{patient.gender}}</td>
+					<td>{{patient.gender if patient.gender is not None else ''}}</td>
 				</tr>
 				<tr>
 					<td><strong>Address</strong></td>
-					<td>{{patient.address}}</td>
+					<td>{{patient.address if patient.address is not None else ''}}</td>
 				</tr>
 				<tr>
 					<td><strong>Address 2</strong></td>
-					<td>{{patient.address2}}</td>
+					<td>{{patient.address2 if patient.address2 is not None else ''}}</td>
 				</tr>
 				<tr>
 					<td><strong>City, State, Postal Code</strong></td>
-					<td>{{patient.city}}, {{patient.state}} {{patient.postalCode}}</td>
+					<td>{{patient.city if patient.city is not None else ''}}, {{patient.state if patient.state is not None else ''}} {{patient.postalCode if patient.postalCode is not None else ''}}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -100,23 +100,23 @@
 			<tbody>
 				<tr>
 					<td><strong>Preferred Language</strong></td>
-					<td>{{patient.preferredLang}}</td>
+					<td>{{patient.preferredLang if patient.preferredLang is not None else ''}}</td>
 				</tr>
 				<tr>
 					<td><strong>Occupation</strong></td>
-					<td>{{patient.occupation}}</td>
+					<td>{{patient.occupation if patient.occupation is not None else ''}}</td>
 				</tr>
 				<tr>
 					<td><strong>Religion</strong></td>
-					<td>{{patient.religion}}</td>
+					<td>{{patient.religion if patient.religion is not None else ''}}</td>
 				</tr>
 				<tr>
 					<td><strong>Marital Status</strong></td>
-					<td>{{patient.maritalStatus}}</td>
+					<td>{{patient.maritalStatus if patient.maritalStatus is not None else ''}}</td>
 				</tr>
 				<tr>
 					<td><strong>Has Advance Will</strong></td>
-					<td>{{patient.willAdvance}}</td>
+					<td>{{patient.willAdvance if patient.willAdvance is not None else ''}}</td>
 				</tr>
 			</tbody>
 		</table>
