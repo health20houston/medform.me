@@ -29,7 +29,11 @@
 <script>
 	$(function() {
 		new Medform.Patient.GenerateCode();
+		$('.span3').css({
+		    'height': $('.span3').height()
+		});
 	});
+
 </script>
 
 % rebase mainLayout title = "Home"
