@@ -12,6 +12,9 @@
 					  <div class="control-group">
 					    <div class="controls">
 					      <input class="span7" type="password" id="inputPassword" placeholder="Password" name="pwd">
+					    	% if loginMessage is not None:
+				    		<span class="help-inline">{{!loginMessage}}</span>
+				    		% end
 					    </div>
 					  </div>
 					  <div class="control-group">
@@ -64,6 +67,11 @@
 			</form>
 		</div>
 	</div>
+	
+		%if singupMessage is not None
+		<div> {{!signupMessage}}</div>
+		%end
+
 </div>
 
 
