@@ -48,7 +48,6 @@
           border-radius: 5px;
 }
 
-
 /*
  * Margin and Padding
  */
@@ -129,3 +128,7 @@
 .padding-bottom-25 { padding-bottom: 25px; }
 .padding-bottom-30 { padding-bottom: 30px; }
 .padding-bottom-40 { padding-bottom: 40px; }
+
+.formRow{
+  margin-left:25px;
+}

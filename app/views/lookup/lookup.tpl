@@ -183,6 +183,20 @@
 				None
 				% end
 			</td></tr>
+			<tr><td>Hospitalization</td><td>
+				% if patient.hospitalization is not None:
+				<table class="table table-striped">
+					<thead>
+						<tr><th>For what?</th><th>When</th></tr>
+					</thead>
+					<tbody>						
+						<tr><td>{{patient.hospitalization.forWhat}}</td><td>{{patient.hospitalization.when}}</td></tr>
+					</tbody>
+				</table>
+				% else:
+				None
+				% end
+			</td></tr>
 			<tr><td>Medical History</td><td>
 				% if len(patient.medicalHistory) > 0:
 				<table class="table table-striped">

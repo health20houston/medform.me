@@ -77,7 +77,7 @@ bloodClots = MedicalHistoryGroup(groupName="Blood Clots", sortOrder=8, items=[
 	MedicalHistoryItem(itemName="Blood Clots", sortOrder=1)
 ])
 
-bladderProblems = MedicalHistoryGroup(groupName="diabetes", sortOrder=1, items=[
+bladderProblems = MedicalHistoryGroup(groupName="Bladder Problems?", sortOrder=1, items=[
 	MedicalHistoryItem(itemName="Stress Incontinence", sortOrder=1),
 	MedicalHistoryItem(itemName="Difficulty urinating", sortOrder=2),
 	MedicalHistoryItem(itemName="Night time urination (#)", sortOrder=3),
@@ -113,6 +113,115 @@ stomach = MedicalHistoryGroup(groupName="Stomach/GastroIntestinal", sortOrder=1,
 	MedicalHistoryItem(itemName="Heartburn/Reflux", sortOrder=1)
 ])
 
+glaucoma = MedicalHistoryGroup(groupName="Glaucoma", sortOrder=1, items=[
+	MedicalHistoryItem(itemName="Glaucoma", sortOrder=1)
+])
+
+cataracts = Surgery(name="Cataracts", sortOrder=1)
+
+lasik = Surgery(name="LASIK", sortOrder=1)
+
+tonsillectomy = Surgery(name="Tonsillectomy", sortorder=1)
+
+thyroidectomy = Surgery(name="Thyroidectomy", sortorder=1)
+
+adenoidectomy = Surgery(name="Adenoidectomy", sortorder=1)
+
+coronaryBypass = Surgery(name="Coronary Bypass", sortorder=1)
+
+cardiacStents = Surgery(name="Cardiac Stents", sortorder=1)
+
+pacemaker = Surgery(name="Pacemaker", sortorder=1)
+
+heartValve = Surgery(name="Heart Valve", sortorder=1)
+
+gallbladder = Surgery(name="Gallbladder", sortorder=1)
+
+appendectomy = Surgery(name="Appendectomy", sortorder=1)
+
+bowelResection = Surgery(name="Bowel/stomach resection", sortorder=1)
+
+hemorrhoidectomy = Surgery(name="Hemorrhoidectomy", sortorder=1)
+
+bariatric = Surgery(name="Bariatric surgery", sortorder=1)
+
+hysterectomy = Surgery(name="Hysterectomy", sortorder=1)
+
+endoscopy = Surgery(name="Endoscopy", sortorder=1)
+
+colonoscopy = Surgery(name="Colonoscopy", sortorder=1)
+
+hernia = Surgery(name="Hernia", sortorder=1)
+
+spinalSurgery = Surgery(name="Spinal Surgery", sortorder=1)
+
+tubalLigation = Surgery(name="Tubal Ligation", sortorder=1)
+
+bladderSurgery = Surgery(name="Bladder surgery", sortorder=1)
+
+prostateSurgery = Surgery(name="Prostate surgery/resection", sortorder=1)
+
+sSec = Surgery(name="C-Section", sortorder=1)
+
+orthopedicJoints = Surgery(name="Orthopedic/joints", sortorder=1)
+
+penicillin = Allergy(name="Penicillin", sortorder=1)
+hypertension = FamilyHistory(name="Hypertension", sortorder=1)
+coronaryArteryDisease = FamilyHistory(name="Coronary Artery Disease", sortorder=1)
+elevatedCholesterol = FamilyHistory(name="Elevated Cholesterol", sortorder=1)
+stroke = FamilyHistory(name="Stroke", sortorder=1)
+diabetes = FamilyHistory(name="Diabetes", sortorder=1)
+thyroidfh = FamilyHistory(name="Thyroid", sortorder=1)
+renalDiseaseDialysis = FamilyHistory(name="Renal Disease/Dialysis", sortorder=1)
+cancer = FamilyHistory(name="Cancer", sortorder=1)
+arthritis = FamilyHistory(name="Arthritis", sortorder=1)
+tb = FamilyHistory(name="TB", sortorder=1)
+lungDisease = FamilyHistory(name="Lung disease", sortorder=1)
+asthma = FamilyHistory(name="Asthma", sortorder=1)
+headache = FamilyHistory(name="Headache", sortorder=1)
+seizures = FamilyHistory(name="Seizures", sortorder=1)
+mentalIllness = FamilyHistory(name="Mental Illness", sortorder=1)
+addictions = FamilyHistory(name="Addictions", sortorder=1)
+
+peanuts = Allergy(name="Peanuts", sortorder=1)
+
+latex = Allergy(name="Latex", sortorder=1)
+
+milk = Allergy(name="Milk", sortorder=1)
+
+eggs = Allergy(name="Eggs", sortorder=1)
+
+almonds = Allergy(name="Almonds", sortorder=1)
+
+cashews = Allergy(name="Cashews", sortorder=1)
+
+walnuts = Allergy(name="Walnut", sortorder=1)
+
+bass = Allergy(name="Bass", sortorder=1)
+
+cod = Allergy(name="Cod", sortorder=1)
+
+flounder = Allergy(name="Flounder", sortorder=1)
+
+crab = Allergy(name="Crab", sortorder=1)
+
+lobster = Allergy(name="Lobster", sortorder=1)
+
+shrimp = Allergy(name="Shrimp", sortorder=1)
+
+Soy = Allergy(name="Soy", sortorder=1)
+
+Wheat = Allergy(name="Wheat", sortorder=1)
+
+Aspirin = Allergy(name="Aspirin", sortorder=1)
+
+history = FamilyHistory(name="testHistory",sortorder=1)
+
+
+
+
+
+
 adam = Patient(
 	firstName="Adam",
 	lastName="Presley",
@@ -135,7 +244,6 @@ adam = Patient(
 )
 
 PatientCode.generateNewCode(patient=adam)
-
 
 
 session.commit()

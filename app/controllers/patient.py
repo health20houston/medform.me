@@ -14,6 +14,13 @@ def patientDashboard(viewData):
 @view("patient_dashboard_profile")
 @patientAccount
 def patientDashboardProfile(viewData):
+	viewData["medicalHisotryGroups"] = MedicalHistoryGroup.query.all()
+	#reload patient object to prevent lazyLoad exception with .medicalHistory
+	viewData["patient"] = Patient.get_by(id=viewData["patient"].id)
+	viewData["familyHistories"] = FamilyHistory.query.all()
+
+	viewData["surgeries"] = Surgery.query.all()
+	viewData["allergies"] = Allergy.query.all()
 	return viewData
 
 @route("/api/patient/getcode")
