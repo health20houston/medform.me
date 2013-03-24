@@ -81,12 +81,12 @@ def api_validateUser():
 	
 
 	viewData["email"] = request.all["email"]
-		viewData["pwd"] = request.all["pwd"]
-		user = Patient.get_by(email=viewData["email"], password=viewData["pwd"])
-		print "user = %s" % user
-		if user:
-			request.appSession["patient"] = user
-			redirect("/dashboard")
+	viewData["pwd"] = request.all["pwd"]
+	user = Patient.get_by(email=viewData["email"], password=viewData["pwd"])
+	print "user = %s" % user
+	if user:
+		request.appSession["patient"] = user
+		redirect("/dashboard")
 			
 
 	return viewData
