@@ -54,30 +54,7 @@
 	</div>
 </div>
 
-<p>{{!message}}</p>
 
-<form method="post">
-	<label for="test">Test me</label>
-	<input type="text" name="test" />
-
-	<button type="submit" class="btn btn-large btn-primary" name="btnSubmit">Submit!!!</button>
-</form>
-
-% for patient in patients:
-	% test = 10
-	% print test
-	<div class="well">
-		<h3>{{patient.firstName}} {{patient.lastName}}</h3>
-
-		<div class="address">
-			{{patient.address}}
-			{{patient.city}}, {{patient.state}}
-			{{patient.postalCode}}
-		</div>
-	</div>
-% end
-
-{{patients}}
 
 
 % rebase mainLayout title = "Home"
