@@ -166,6 +166,22 @@ sSec = Surgery(name="C-Section", sortorder=1)
 orthopedicJoints = Surgery(name="Orthopedic/joints", sortorder=1)
 
 penicillin = Allergy(name="Penicillin", sortorder=1)
+hypertension = FamilyHistory(name="Hypertension", sortorder=1)
+coronaryArteryDisease = FamilyHistory(name="Coronary Artery Disease", sortorder=1)
+elevatedCholesterol = FamilyHistory(name="Elevated Cholesterol", sortorder=1)
+stroke = FamilyHistory(name="Stroke", sortorder=1)
+diabetes = FamilyHistory(name="Diabetes", sortorder=1)
+thyroidfh = FamilyHistory(name="Thyroid", sortorder=1)
+renalDiseaseDialysis = FamilyHistory(name="Renal Disease/Dialysis", sortorder=1)
+cancer = FamilyHistory(name="Cancer", sortorder=1)
+arthritis = FamilyHistory(name="Arthritis", sortorder=1)
+tb = FamilyHistory(name="TB", sortorder=1)
+lungDisease = FamilyHistory(name="Lung disease", sortorder=1)
+asthma = FamilyHistory(name="Asthma", sortorder=1)
+headache = FamilyHistory(name="Headache", sortorder=1)
+seizures = FamilyHistory(name="Seizures", sortorder=1)
+mentalIllness = FamilyHistory(name="Mental Illness", sortorder=1)
+addictions = FamilyHistory(name="Addictions", sortorder=1)
 
 peanuts = Allergy(name="Peanuts", sortorder=1)
 
@@ -216,7 +232,10 @@ adam = Patient(
 	address="555 Another Way",
 	city="Friendswood",
 	state="Texas",
-	postalCode="77546"
+	postalCode="77546",
+	medicalHistory=[
+		thyroid.items[0]
+	]
 )
 
 PatientCode.generateNewCode(patient=adam)

@@ -7,3 +7,5 @@ from medicalhistory import *
 from surgeries import *
 from allergies import *
 from medications import *
+from hospitalization import *
+from familyhistory import *

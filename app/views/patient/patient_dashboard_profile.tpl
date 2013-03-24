@@ -241,7 +241,7 @@
 			<div id="collapseHistory{{historyIx}}" class="accordion-body collapse">
 				<div class="accordion-inner">
 				% for historyItem in historyGroup.items:
-				{{historyItem.itemName}}: <input type="checkbox" value="Yes">Yes</input><br />
+				<input type="checkbox" value="Yes" /> {{historyItem.itemName}}<br />
 				% end
 				</div>
 			</div>
@@ -272,8 +272,32 @@
 		  </div>
 	</div>
   </div>
-  <div class="tab-pane" id="hospitalization">...</div>
-  <div class="tab-pane" id="family-history">...</div>
+  <div class="tab-pane" id="hospitalization">
+  	<div class="control-group">
+	  <label class="control-label">For What?</label>
+	  <div class="controls">
+	  	<textarea id="hospitalizationWhy" name="hospitalizationWhy" type="text" placeholder="Why were you hospitalized?" rows="3"></textarea>
+	  </div>
+	</div>
+	<div class="control-group">
+	  <label class="control-label">When?</label>
+	  <div class="controls">
+	    <input id="hospitalizationWhen" name="hospitalizationWhen" type="text" placeholder="When were you hospitalized?" class="input-xlarge" required="">
+	  </div>
+	</div>
+  </div>
+  <div class="tab-pane" id="family-history">
+  	<div class="control-group">
+		<label class="control-label">Please check all of your family history</label>
+		  <div class="controls">
+		  	%for i, familyHistory in enumerate(familyHistories):
+			<label class="checkbox inline">
+			  <input type="checkbox" id="familyHistory{{!i}}">{{!familyHistory.name}}
+			</label><br/>
+			%end
+		  </div>
+		</div>
+  </div>
   <div class="tab-pane" id="allergies">
 	<!-- Checkbox input-->
 	<div class="control-group">
