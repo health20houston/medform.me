@@ -169,7 +169,7 @@ elevatedCholesterol = FamilyHistory(name="Elevated Cholesterol", sortorder=1)
 
 stroke = FamilyHistory(name="Stroke", sortorder=1)
 
-diabetes = FamilyHistory(name="Diabetes", sortorder=1)
+diabetesfh = FamilyHistory(name="Diabetes", sortorder=1)
 
 thyroidfh = FamilyHistory(name="Thyroid", sortorder=1)
 
@@ -264,8 +264,7 @@ adam = Patient(
 		EmergencyContact(firstName="Adam", lastName="Sandler", phoneNumber=PhoneNumber(number="(972)999-5434", numType="Mobile"), relationship="Actor")
 	],
 	primaryCare=PrimaryCare(firstName="Jose", lastName="JP", phoneNumber=PhoneNumber(number="(972)999-5000", numType="Mobile")),
-	hospitalization=Hospitalization(forWhat="Ran into a pole", when=parse("09/29/1998"))
-	primaryCare=PrimaryCare(firstName="Jose", lastName="JP", phoneNumber=PhoneNumber(number="9729995000", numType="Mobile")),
+	hospitalization=Hospitalization(forWhat="Ran into a pole", when=parse("09/29/1998")),
 	surgeries=[
 		lasik,
 		colonoscopy

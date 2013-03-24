@@ -31,6 +31,7 @@
 	$(function() {
 		new Medform.Patient.GenerateCode();
 	});
+
 </script>
 
 % rebase mainLayout title = "Home"
