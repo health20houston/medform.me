@@ -18,7 +18,7 @@
 	</div>
 
 	<div class="modal-body">
-		<h2 class="pull-left margin-right-10">Your Code:</h2>
+		<h3 class="pull-left margin-right-10">Your Code:</h3>
   		<input id="codeBox" type="text" class="search-query" placeholder="Search" />
 	</div>
 
