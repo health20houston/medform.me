@@ -215,6 +215,9 @@ Wheat = Allergy(name="Wheat", sortorder=1)
 
 Aspirin = Allergy(name="Aspirin", sortorder=1)
 
+history = FamilyHistory(name="testHistory",sortorder=1)
+
+
 
 
 

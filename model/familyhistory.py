@@ -13,4 +13,4 @@ class FamilyHistory(Entity):
 	sortOrder = Field(Integer(), nullable=False, default=0)
 
 	def __repr__(self):
-		return "<Surgery %s (%s)>" % (self.name, self.id)
+		return "<Family History %s (%s)>" % (self.name, self.id)

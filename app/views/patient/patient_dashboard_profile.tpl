@@ -240,8 +240,18 @@
 			</div>
 			<div id="collapseHistory{{historyIx}}" class="accordion-body collapse">
 				<div class="accordion-inner">
-				% for historyItem in historyGroup.items:
-				<input type="checkbox" value="Yes" /> {{historyItem.itemName}}<br />
+				% for i, historyItem in enumerate(historyGroup.items):
+					%if i%3 == 0 & i != len(historyGroup.items):
+						<div class="row formRow">
+					%end
+					<div class="span3">
+						<label class="checkbox">
+							<input type="checkbox" value="{{historyItem.itemName}}" />{{historyItem.itemName}} <br />
+						</label>
+					</div>
+					%if i%3 == 2 or i == len(historyGroup.items):
+						</div>
+					%end
 				% end
 				</div>
 			</div>
