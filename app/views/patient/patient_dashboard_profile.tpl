@@ -1,7 +1,7 @@
 <ul class="nav nav-tabs" id="myTab">
   <li class="active"><a href="#demographics" data-toggle="tab">Demographics</a></li>
   <li><a href="#insurance" data-toggle="tab">Insurance</a></li>
-  <li><a href="#primary-care" data-toggle="tab">Primary Care</a></li>
+  <li><a href="#primary-care" data-toggle="tab">Contacts</a></li>
   <li><a href="#medical-history" data-toggle="tab">Medical History</a></li>
   <li><a href="#surgeries" data-toggle="tab">Surgeries</a></li>
   <li><a href="#hospitalization" data-toggle="tab">Hospitalization</a></li>
@@ -231,25 +231,28 @@
 			</div>
 			<div id="collapseHistory{{historyIx}}" class="accordion-body collapse">
 				<div class="accordion-inner">
-
-				% for i , historyItem in enumerate(historyGroup.items):
+				%for i , historyItem in enumerate(historyGroup.items):
 					%if i%3 == 0:
 					%open = True
-					%print i%3
 						<div class="row formRow">
 						%open = True
 					%end
 					<div class="span3">
+					%flag = False
+					%for items in patient.medicalHistory:
+					%	if historyItem.itemName == items.itemName:
+					%		flag = True
+					%	end
+					%end
 						<label class="checkbox">
-							<input type="checkbox" value="{{historyItem.itemName}}" />{{historyItem.itemName}} <br />
+							<input type="checkbox" value="{{historyItem.itemName}}" {{!'checked="checked"' if flag else ''}} />{{historyItem.itemName}} <br />
 						</label>
 					</div>
 					%if i%3 == 2 or len(historyGroup.items)-1 == i:
-					%print i%3
 						</div>
 					%end
 					%i+=1
-				% end
+				%end
 				</div>
 			</div>
 		</div>
