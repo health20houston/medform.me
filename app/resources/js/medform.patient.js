@@ -14,20 +14,6 @@ Medform.Patient.GenerateCode = function() {
 		self.showDialog();
 	});
 
-	$("#codeBox").click(function(){
-		$(this).select();
-	});
-
-	$("#codeBox").css({
-		'height': "50px",
-		'width': "50%",
-		'text-align': 'center',
-		'font-size': '45px'
-	});
-
-	$("#codeBox").mouseup(function(e){
-		e.preventDefault();
-	});
 	/*
 	 * Methods
 	 */
@@ -36,7 +22,7 @@ Medform.Patient.GenerateCode = function() {
 		 * Get a code yo
 		 */
 		$.get("/api/patient/getcode", function(data) {
-			$("#codeBox").attr('value',data);
+			$("#codeBox").html(data);
 		});
 		
 		self.generateCodeModal.modal("show");

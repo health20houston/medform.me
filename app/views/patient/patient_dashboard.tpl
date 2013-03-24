@@ -18,8 +18,7 @@
 	</div>
 
 	<div class="modal-body">
-		<h3 class="pull-left margin-right-10">Your Code:</h3>
-  		<input id="codeBox" type="text" class="search-query" placeholder="Search" />
+		<h3>Your Code: <span id="codeBox"></span></h3>
 	</div>
 
 	<div class="modal-footer">
