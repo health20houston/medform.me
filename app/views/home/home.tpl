@@ -7,12 +7,12 @@
 			    <p>Type in your email and password to login, if you are not a member this will automaticly take you to the sign up page.</p>
 					  <div class="control-group">
 					    <div class="controls">
-					      <input class="span7" type="text" id="inputEmail" placeholder="Email">
+					      <input class="span7" type="text" id="inputEmail" placeholder="Email" name="email">
 					    </div>
 					  </div>
 					  <div class="control-group">
 					    <div class="controls">
-					      <input class="span7" type="password" id="inputPassword" placeholder="Password">
+					      <input class="span7" type="password" id="inputPassword" placeholder="Password" name="pwd">
 					    </div>
 					  </div>
 					  <div class="control-group">
@@ -66,15 +66,5 @@
 		</div>
 	</div>
 </div>
-
-<p>{{!message}}</p>
-
-<form method="post">
-	<label for="test">Test me</label>
-	<input type="text" name="test" />
-
-	<button type="submit" class="btn btn-large btn-primary" name="btnSubmit">Submit!!!</button>
-</form>
-
 
 % rebase mainLayout title = "Home"

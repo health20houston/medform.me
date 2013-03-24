@@ -1,4 +1,4 @@
-from bottle import view, route, request
+from bottle import view, route, request, redirect
 
 from model.model import *
 
@@ -8,6 +8,9 @@ from model.model import *
 @view("home")
 def home():
     viewData = {
+        "email": "",
+        "pwd": "",
+        "success": True,
         "message": "Test message",
         "patients": None,
         "codeErrorCss": "",
@@ -37,5 +40,17 @@ def home():
             viewData["nameHospitalError"] = "Please supply admin name."
         else:
             viewData["nameHospitalValue"] = request.all["nameHospital"]
+    # validation for user sign in
+    if "userBtn" in request.all:
+        viewData["email"] = request.all["email"]
+        viewData["pwd"] = request.all["pwd"]
+
+        user = Patient.get_by(email=viewData["email"], password=viewData["pwd"])
+
+        if user:
+            request.appSession["Patient"] = user
+            redirect("/dashboard")
+        else:
+            viewData["sucess"] = False
 
     return viewData
