@@ -261,6 +261,22 @@
 	<fieldset class="margin-top-25">
 		<legend>Medical History</legend>
 
+		% print patient.medicalHistory
+		% for group in medicalHistoryItems:
+			<h4>{{group}}</h4>
+			
+			<table class="table table-striped">
+				<tbody>
+					% for item in medicalHistoryItems[group]:
+						% checked = " checked='checked'" if item in patient.medicalHistory else ""
+						<tr>
+							<td><input type="checkbox"{{checked}} disabled="disabled" /> {{item.itemName}}</td>
+						</tr>
+					% end
+				</tbody>
+			</table>
+		% end
+
 		% if len(patient.medicalHistory):
 			<table class="table table-striped">
 				<thead>
