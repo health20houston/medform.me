@@ -7,7 +7,7 @@ metadata.bind.echo = True
 
 class FamilyHistory(Entity):
 	using_options(tablename="familyhistory")
-	people = ManyToOne("Patient")
+	people = ManyToMany("Patient")
 
 	name = Field(Unicode(50), nullable=False)
 	sortOrder = Field(Integer(), nullable=False, default=0)
