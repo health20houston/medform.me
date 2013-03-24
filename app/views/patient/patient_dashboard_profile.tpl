@@ -398,7 +398,7 @@
 	$('#myTab a:first').tab('show');
 	$(".medPhone").focusout(function() {
 	    var $this = $(this);
-	    $this.val($this.val().replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, '($1)$2-$3'));
+	    $this.val($this.val().replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, '($1) $2-$3'));
 	})
   })
 </script>
