@@ -10,6 +10,11 @@ from model.model import *
 def patientDashboard(viewData):
 	return viewData
 
+@route("/dashboard/profile")
+@view("patient_dashboard_profile")
+@patientAccount
+def patientDashboardProfile(viewData):
+	return viewData
 
 @route("/api/patient/getcode")
 @patientAccount
