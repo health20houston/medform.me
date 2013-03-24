@@ -64,7 +64,7 @@
 		<div class="control-group">
 		  <label class="control-label">{{phoneNumber.numType}} Phone</label>
 		  <div class="controls">
-			<input id="{{phoneNumber.numType}}-phone" name="{{phoneNumber.numType}}-phone" type="text" placeholder="{{phoneNumber.numType}} Phone" class="input-xlarge" required="" value="{{phoneNumber.number}}">
+			<input id="{{phoneNumber.numType}}-phone" name="{{phoneNumber.numType}}-phone" type="text" placeholder="{{phoneNumber.numType}} Phone" class="input-xlarge medPhone" required="" value="{{phoneNumber.number}}">
 		  </div>
 		</div>
 		% end
@@ -197,7 +197,7 @@
 	<div class="control-group">
 	  <label class="control-label">Emergency Contact Number</label>
 	  <div class="controls">
-		<input id="em-con-num{{emergencyContactIx}}" name="em-con-num{{emergencyContactIx}}" type="text" placeholder="Emergency Contact Number" class="input-xlarge" required="" value="{{emergencyContact.phoneNumber.number}}">
+		<input id="em-con-num{{emergencyContactIx}}" name="em-con-num{{emergencyContactIx}}" type="text" placeholder="Emergency Contact Number" class="input-xlarge medPhone" required="" value="{{emergencyContact.phoneNumber.number}}">
 	  </div>
 	</div>
 	<!-- Text input-->
@@ -220,7 +220,7 @@
 	<div class="control-group">
 	  <label class="control-label">Primary Care Physician Number</label>
 	  <div class="controls">
-		<input id="pri-car-phy-num" name="pri-car-phy-num" type="text" placeholder="Primary Care Physician Number" class="input-xlarge" value="{{patient.primaryCare.phoneNumber.number}}">
+		<input id="pri-car-phy-num" name="pri-car-phy-num" type="text" placeholder="Primary Care Physician Number" class="input-xlarge medPhone" value="{{patient.primaryCare.phoneNumber.number}}">
 	  </div>
 	</div>
 	<!-- Check input-->
@@ -367,6 +367,10 @@
 <script>
   $(function () {
 	$('#myTab a:first').tab('show');
+	$(".medPhone").focusout(function() {
+	    var $this = $(this);
+	    $this.val($this.val().replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, '($1)$2-$3'));
+	})
   })
 </script>
 
