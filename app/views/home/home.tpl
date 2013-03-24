@@ -18,7 +18,7 @@
 					  <div class="control-group">
 					    <div class="controls">
 					      </label>
-					      <button type="submit" class="btn btn-primary btn-large">Sign in/Sign Up</button>
+					      <button type="submit" class="btn btn-primary btn-large" name="userBtn">Sign in/Sign Up</button>
 					    </div>
 					  </div>
 			  </fieldset>
@@ -39,7 +39,7 @@
 				</div><!--/control-group-->
 				<div class="control-group">
 					<div class="controls">
-			    		<button type="submit" class="btn btn-primary btn-large">Submit Code</button>
+			    		<button type="submit" class="btn btn-primary btn-large" name="userBtn">Submit Code</button>
 			    	</div><!--/controls-->
 				</div><!--/control-group-->	
 			  </fieldset>
