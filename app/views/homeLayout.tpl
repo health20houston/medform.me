@@ -35,57 +35,7 @@
         <!-- <p><a href="#" class="btn btn-primary btn-large">Sign Up &raquo;</a></p> -->
       </div>
 		<div class="row-fluid">
-			<div class="span6">
-				<div class="hero-unit hero-blue">
-					<form>
-					  <fieldset>
-					    <legend>Log In / Sign Up</legend>
-								  <div class="control-group">
-							    <div class="controls">
-							      <input class="span7" type="text" id="inputEmail" placeholder="Email">
-							    </div>
-							  </div>
-							  <div class="control-group">
-							    <div class="controls">
-							      <input class="span7" type="password" id="inputPassword" placeholder="Password">
-							    </div>
-							  </div>
-							  <div class="control-group">
-							    <div class="controls">
-							      </label>
-							      <button type="submit" class="btn btn-primary btn-large">Sign in/Sign Up</button>
-							    </div>
-							  </div>
-					  </fieldset>
-					</form>
-				</div>
-			</div><!--/span-->
 
-			<div class="span6">
-				<div class="hero-unit hero-green">
-					<form>
-					  <fieldset>
-					    <legend>Enter Code</legend>
-					    <p>Enter the encrypted code here now!</p>
-					    <div class="control-group">
-						    <div class="controls">
-						    	<input type="text" class="span7" placeholder="Please Enter Code Here..">
-							</div><!--/controls-->
-						</div><!--/control-group-->
-						<div class="control-group">
-							<div class="controls">
-					    		<button type="submit" class="btn btn-primary btn-large">Submit Code</button>
-					    	</div><!--/controls-->
-						</div><!--/control-group-->	
-					  </fieldset>
-					</form>
-				</div>
-
-				<!--JS-START-->
-				<script src="/resources/js/jquery.js"></script>
-				<script src="/resources/js/bootstrap.js"></script>
-				<!--JS-END-->
-				
 				<!-- CONTENT -->
 				<div class="row-fluid">
 					<div class="span12" id="contentContainer">
@@ -93,7 +43,6 @@
 					</div>
 				</div>
 				<!-- END-CONTENT -->
-			</div><!--/span-->
 		</div><!--/row-->
 
 		<hr>
@@ -102,5 +51,9 @@
 			<p>&copy; 2013 <a href="http://medform.me">medform.me</a> - Never fill out a doctor’s form again!</p>
 		</footer>
 	</div><!--/.fluid-container-->
+	<!--JS-START-->
+	<script src="/resources/js/jquery.js"></script>
+	<script src="/resources/js/bootstrap.js"></script>
+	<!--JS-END-->
 </body>
 </html>

@@ -1,10 +1,9 @@
 <div class="row-fluid">
 	<div class="span6">
-		<div class="hero-unit">
-			<form>
+		<div class="hero-unit hero-blue">
+			<form method="post">
 			  <fieldset>
-			    <legend>Sign Up/Login</legend>
-			    <p>Type in your email and password to login, if you are not a member this will automaticly take you to the sign up page.</p>
+			    <legend>Log In / Sign Up</legend>
 					  <div class="control-group">
 					    <div class="controls">
 					      <input class="span7" type="text" id="inputEmail" placeholder="Email" name="email">
@@ -13,6 +12,9 @@
 					  <div class="control-group">
 					    <div class="controls">
 					      <input class="span7" type="password" id="inputPassword" placeholder="Password" name="pwd">
+					    	% if loginMessage is not None:
+				    		<span class="help-inline">{{!loginMessage}}</span>
+				    		% end
 					    </div>
 					  </div>
 					  <div class="control-group">
@@ -27,11 +29,11 @@
 	</div><!--/span-->
 
 	<div class="span6">
-		<div class="hero-unit">
+		<div class="hero-unit hero-green">
 			<form method="post">
 			  <fieldset>
-			    <legend>For Doctor, Please Enter Code</legend>
-			    <p>Enter the patient provided code here!</p>
+			    <legend>Enter Code</legend>
+			    <p>Enter the encrypted code here now!</p>
 			    <div class="control-group {{codeErrorCss}}">
 				    <div class="controls">
 				    	<input type="text" class="span7" name="code" placeholder="Please Enter Code Here.." value="{{codeValue}}">
@@ -65,6 +67,12 @@
 			</form>
 		</div>
 	</div>
+	
+		%if singupMessage is not None
+		<div> {{!signupMessage}}</div>
+		%end
+
 </div>
 
-% rebase mainLayout title = "Home"
+
+% rebase homeLayout title = "Home"
