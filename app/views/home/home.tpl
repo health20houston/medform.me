@@ -28,19 +28,32 @@
 
 	<div class="span6">
 		<div class="hero-unit">
-			<form>
+			<form method="post">
 			  <fieldset>
 			    <legend>For Doctor, Please Enter Code</legend>
 			    <p>Enter the patient provided code here!</p>
-			    <div class="control-group">
+			    <div class="control-group {{codeErrorCss}}">
 				    <div class="controls">
-				    	<input type="text" class="span7" name="code" placeholder="Please Enter Code Here..">
+				    	<input type="text" class="span7" name="code" placeholder="Please Enter Code Here.." value="{{codeValue}}">
+				    	% if codeError is not None:
+				    	<span class="help-inline">{{!codeError}}</span>
+				    	% end
 					</div><!--/controls-->
+				</div><!--/control-group-->
+			    <div class="control-group {{nameDocErrorCss}}">
 					<div class="controls">
-				    	<input type="text" class="span7" name="nameDoc" placeholder="Please Enter Doctor Name Here..">
+				    	<input type="text" class="span7" name="nameDoc" placeholder="Please Enter Doctor Name Here.." value="{{nameDocValue}}">
+				    	% if nameDocError is not None:
+				    	<span class="help-inline">{{!nameDocError}}</span>
+				    	% end
 					</div><!--/controls-->
+				</div><!--/control-group-->
+			    <div class="control-group {{nameHospitalErrorCss}}">
 					<div class="controls">
-				    	<input type="text" class="span7" name="namePatient" placeholder="Please Enter Patient Name Here..">
+				    	<input type="text" class="span7" name="nameHospital" placeholder="Please Enter Hospital Admin Name Here.." value="{{nameHospitalValue}}">
+				    	% if nameHospitalError is not None:
+				    	<span class="help-inline">{{!nameHospitalError}}</span>
+				    	% end
 					</div><!--/controls-->
 				</div><!--/control-group-->
 				<div class="control-group">
@@ -62,22 +75,6 @@
 
 	<button type="submit" class="btn btn-large btn-primary" name="btnSubmit">Submit!!!</button>
 </form>
-
-% for patient in patients:
-	% test = 10
-	% print test
-	<div class="well">
-		<h3>{{patient.firstName}} {{patient.lastName}}</h3>
-
-		<div class="address">
-			{{patient.address}}
-			{{patient.city}}, {{patient.state}}
-			{{patient.postalCode}}
-		</div>
-	</div>
-% end
-
-{{patients}}
 
 
 % rebase mainLayout title = "Home"
