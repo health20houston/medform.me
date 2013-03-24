@@ -32,7 +32,7 @@ class PrimaryCare(Entity):
 	people = ManyToOne("Patient")
 	firstName = Field(Unicode(30), nullable=False)
 	lastName = Field(Unicode(30), nullable=False)
-	phonenumber = OneToOne("PhoneNumber",  inverse="primaryCare")
+	phoneNumber = OneToOne("PhoneNumber",  inverse="primaryCare")
 
 	def __repr__(self):
 		return "<Primary Care %s %s (%s)>" % (self.firstName, self.lastName, self.id)
