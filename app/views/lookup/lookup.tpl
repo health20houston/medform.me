@@ -276,26 +276,6 @@
 				</tbody>
 			</table>
 		% end
-
-		% if len(patient.medicalHistory):
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>Name</th>
-					</tr>
-				</thead>
-				<tbody>
-					% for h in patient.medicalHistory:
-						<tr>
-							<td>{{h.itemName}}</td>
-						</tr>
-					% end
-				</tbody>
-			</table>
-
-		% else:
-			None
-		% end
 	</fieldset>
 </div>
 

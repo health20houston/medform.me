@@ -169,7 +169,7 @@ elevatedCholesterol = FamilyHistory(name="Elevated Cholesterol", sortorder=1)
 
 stroke = FamilyHistory(name="Stroke", sortorder=1)
 
-diabetes = FamilyHistory(name="Diabetes", sortorder=1)
+diabetesfh = FamilyHistory(name="Diabetes", sortorder=1)
 
 thyroidfh = FamilyHistory(name="Thyroid", sortorder=1)
 
