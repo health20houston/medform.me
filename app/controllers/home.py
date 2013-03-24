@@ -7,11 +7,6 @@ from model.model import *
 @view("home")
 def home():
 	viewData = {
-		"email": "",
-		"pwd": "",
-		"loginMessage": "",
-		"signupMessage": "",
-		"message": "Test message",
 		"patients": None,
 		"codeErrorCss": "",
 		"nameDocErrorCss": "",
@@ -76,20 +71,22 @@ def home():
 @route("/api/patient/validateCred", method="POST")
 def api_validateUser():
 	viewData = {
-
+		"email": "",
+		"pwd": "",
+		"status": "",
 	}
-	
 
 	viewData["email"] = request.all["email"]
-		viewData["pwd"] = request.all["pwd"]
-		user = Patient.get_by(email=viewData["email"], password=viewData["pwd"])
-		print "user = %s" % user
-		if user:
-			request.appSession["patient"] = user
-			redirect("/dashboard")
+	viewData["pwd"] = request.all["pwd"]
+	user = Patient.get_by(email=viewData["email"], password=viewData["pwd"])
+	print "user = %s" % user
+	if user:
+		request.appSession["patient"] = user
+		redirect("/dashboard")
+	else:
+		if Patient.get_by(email=viewData["email"]):
+			viewData["loginMessage"] = "Your Password is incorrect"
 		else:
-			if Patient.get_by(email=viewData["email"]):
-				viewData["loginMessage"] = "Your Password is incorrect"
-			else:
-				viewData["signupMessage"] = "This email %s is not registered would you like to sign up?" % viewData["email"]
+			
+
 	return viewData
