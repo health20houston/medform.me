@@ -44,69 +44,19 @@
 	</div>
 
 	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span6">
-				<div class="hero-unit">
-					<form>
-					  <fieldset>
-					    <legend>Sign Up/Login</legend>
-					    <p>Type in your email and password to login, if you are not a member this will automaticly take you to the sign up page.</p>
-							  <div class="control-group">
-							    <div class="controls">
-							      <input class="span7" type="text" id="inputEmail" placeholder="Email">
-							    </div>
-							  </div>
-							  <div class="control-group">
-							    <div class="controls">
-							      <input class="span7" type="password" id="inputPassword" placeholder="Password">
-							    </div>
-							  </div>
-							  <div class="control-group">
-							    <div class="controls">
-							      </label>
-							      <button type="submit" class="btn btn-primary btn-large">Sign in/Sign Up</button>
-							    </div>
-							  </div>
-					  </fieldset>
-					</form>
-				</div>
-			</div><!--/span-->
-
-			<div class="span6">
-				<div class="hero-unit">
-					<form>
-					  <fieldset>
-					    <legend>Enter Code</legend>
-					    <p>Enter the encrpted code here now!</p>
-					    <div class="control-group">
-						    <div class="controls">
-						    	<input type="text" class="span7" placeholder="Please Enter Code Here..">
-							</div><!--/controls-->
-						</div><!--/control-group-->
-						<div class="control-group">
-							<div class="controls">
-					    		<button type="submit" class="btn btn-primary btn-large">Submit Code</button>
-					    	</div><!--/controls-->
-						</div><!--/control-group-->	
-					  </fieldset>
-					</form>
-				</div>
-
-				<!--JS-START-->
-				<script src="/resources/js/jquery.js"></script>
-				<script src="/resources/js/bootstrap.js"></script>
-				<!--JS-END-->
+		<!--JS-START-->
+		<script src="/resources/js/jquery.js"></script>
+		<script src="/resources/js/bootstrap.js"></script>
+		<!--JS-END-->
 				
-				<!-- CONTENT -->
-				<div class="row-fluid">
-					<div class="span12" id="contentContainer">
-						%include
-					</div>
-				</div>
-				<!-- END-CONTENT -->
-			</div><!--/span-->
-		</div><!--/row-->
+		<!-- CONTENT -->
+		<div class="row-fluid">
+			<div class="span12" id="contentContainer">
+				%include
+			</div>
+		</div>
 
+		<!-- END-CONTENT -->
 		<hr>
 
 		<footer>

@@ -103,17 +103,17 @@ glaucoma = MedicalHistoryGroup(groupName="Glaucoma", sortOrder=1, items=[
 ])
 
 thyroid = MedicalHistoryGroup(groupName="Thyroid", sortOrder=1, items=[
-	MedicalHistoryItem(itemName="Hypothyroid", sortOrder=1)
+	MedicalHistoryItem(itemName="Hypothyroid", sortOrder=1),
 	MedicalHistoryItem(itemName="Hypethyroid", sortOrder=1)
 ])
 
 stomach = MedicalHistoryGroup(groupName="Stomach/GastroIntestinal", sortOrder=1, items=[
-	MedicalHistoryItem(itemName="Duodenal ulcer", sortOrder=1)
-	MedicalHistoryItem(itemName="Gastric/stomach ulcer", sortOrder=1)
+	MedicalHistoryItem(itemName="Duodenal ulcer", sortOrder=1),
+	MedicalHistoryItem(itemName="Gastric/stomach ulcer", sortOrder=1),
 	MedicalHistoryItem(itemName="Heartburn/Reflux", sortOrder=1)
 ])
 
-adam = Person(
+adam = Patient(
 	firstName="Adam",
 	lastName="Presley",
 	email="adam@adampresley.com",
@@ -122,11 +122,15 @@ adam = Person(
 	gender="M",
 	phoneNumbers=[
 		PhoneNumber(number="9729995466", numType="Mobile")
-	]
+	],
+	address="555 Another Way",
+	city="Friendswood",
+	state="Texas",
+	postalCode="77546"
 )
 
 
 session.commit()
 
 
-print Person.get_by(firstName="Adam")
+print Patient.get_by(firstName="Adam")
