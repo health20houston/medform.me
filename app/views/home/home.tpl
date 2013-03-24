@@ -30,16 +30,22 @@
 		<div class="hero-unit">
 			<form>
 			  <fieldset>
-			    <legend>Enter Code</legend>
-			    <p>Enter the encrpted code here now!</p>
+			    <legend>For Doctor, Please Enter Code</legend>
+			    <p>Enter the patient provided code here!</p>
 			    <div class="control-group">
 				    <div class="controls">
-				    	<input type="text" class="span7" placeholder="Please Enter Code Here..">
+				    	<input type="text" class="span7" name="code" placeholder="Please Enter Code Here..">
+					</div><!--/controls-->
+					<div class="controls">
+				    	<input type="text" class="span7" name="nameDoc" placeholder="Please Enter Doctor Name Here..">
+					</div><!--/controls-->
+					<div class="controls">
+				    	<input type="text" class="span7" name="namePatient" placeholder="Please Enter Patient Name Here..">
 					</div><!--/controls-->
 				</div><!--/control-group-->
 				<div class="control-group">
 					<div class="controls">
-			    		<button type="submit" class="btn btn-primary btn-large" name="userBtn">Submit Code</button>
+			    		<button type="submit" class="btn btn-primary btn-large" name="codeBtn">Submit Code</button>
 			    	</div><!--/controls-->
 				</div><!--/control-group-->	
 			  </fieldset>
