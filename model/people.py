@@ -1,6 +1,7 @@
 import config 
 import random
 import string
+import datetime
 
 from elixir import *
 
@@ -55,12 +56,39 @@ class PatientCode(Entity):
 	code = Field(Unicode(5), nullable=False)
 	expirationDateTime = Field(DateTime(), nullable=False)
 
+	EXPIRATION_MINUTES = 30
+
 	def __repr__(self):
 		return "<PatientCode %s>" % self.code
 
 	@staticmethod
-	def generateNewCode():
-		return "".join(random.choice(string.ascii_letters) for i in xrange(8)).lower()
+	def removeExpiredCodes():
+		currentDateTime = datetime.datetime.now()
+		oldEntries = PatientCode.query.filter(PatientCode.expirationDateTime <= currentDateTime).all()
+
+		[e.delete() for e in oldEntries]
+
+	@staticmethod
+	def generateNewCode(patient):
+		#
+		# First remove old entries. Then see if we have a current one we can
+		# pilfer. If not make a new one.
+		#
+		PatientCode.removeExpiredCodes()
+
+		currentDateTime = datetime.datetime.now()
+		currentCode = PatientCode.query.filter(PatientCode.expirationDateTime > currentDateTime).all()
+
+		if currentCode:
+			code = currentCode[0].code
+			print "Reusing current code: %s" % code
+		else:
+			print "Generating new code."
+			code = "".join(random.choice(string.ascii_letters) for i in xrange(8)).lower()
+			newExpirationDateTime = datetime.datetime.now() + datetime.timedelta(minutes=PatientCode.EXPIRATION_MINUTES)
+			PatientCode(patient=patient, code=code, expirationDateTime=newExpirationDateTime)
+
+		return code
 
 	@staticmethod
 	def validateCode(code):
