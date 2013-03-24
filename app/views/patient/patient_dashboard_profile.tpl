@@ -178,6 +178,7 @@
 	  <input type="checkbox" {{!'checked' if insurance.isPrimary else ''}}>
 	  is Primary Insurance?
 	</label>
+	<br />
 	% end
   </div>
   <div class="tab-pane" id="primary-care">
