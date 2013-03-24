@@ -70,9 +70,9 @@
 		% end
 		<!-- Password input-->
 		<div class="control-group">
-		  <label class="control-label">Social security</label>
+		  <label class="control-label">Social security <a href="#" rel="tooltip" data-toggle="tooltip" title="" data-original-title="We store your SSN with bank level security"><i class="icon-info-sign"></i></a></label>
 		  <div class="controls">
-			<input id="social-security" name="social-security" type="password" placeholder="Social Security" class="input-xlarge" value="{{patient.ssn}}">
+			<input id="social-security" name="social-security" type="password" placeholder="Social Security" class="input-xlarge" value="{{patient.ssn}}"> 
 		  </div>
 		</div>
 		<!-- Date input-->
