@@ -30,6 +30,9 @@ def home():
 		if len(request.all["code"]) == 0:
 			viewData["codeErrorCss"] = "error"
 			viewData["codeError"] = "Please supply the code."
+		elif PatientCode.validateCode(request.all["code"]) is None:
+			viewData["codeErrorCss"] = "error"
+			viewData["codeError"] = "Please supply a valid code."
 		else:
 			viewData["codeValue"] = request.all["code"]
 	
