@@ -8,72 +8,78 @@
   <li><a href="#family-history" data-toggle="tab">Family History</a></li>
   <li><a href="#allergies" data-toggle="tab">Allergies</a></li>
   <li><a href="#medications" data-toggle="tab">Medications</a></li>
-  <li><a href="#other" data-toggle="tab">Other</a></li>
+  <li><a href="#submitTab" data-toggle="tab">Review and Submit</a></li>
 </ul>
  
 <div class="tab-content">
   <div class="tab-pane active" id="demographics">
 		<!-- Text input-->
 		<div class="control-group">
-		  <label class="control-label">Full Name</label>
+		  <label class="control-label">First Name</label>
 		  <div class="controls">
-		    <input id="name" name="name" type="text" placeholder="First Mid Last" class="input-xlarge" required="">
+		    <input id="name" name="firstName" type="text" placeholder="First Mid Last" class="input-xlarge" required="" value="{{patient.firstName}}">
+		  </div>
+		</div>
+		<div class="control-group">
+		  <label class="control-label">Middle Name</label>
+		  <div class="controls">
+		    <input id="name" name="middleName" type="text" placeholder="First Mid Last" class="input-xlarge" required="" value="{{patient.middleName}}">
+		  </div>
+		</div>
+		<div class="control-group">
+		  <label class="control-label">Last Name</label>
+		  <div class="controls">
+		    <input id="name" name="lastName" type="text" placeholder="First Mid Last" class="input-xlarge" required="" value="{{patient.lastName}}">
 		  </div>
 		</div>
 		<!-- Text input-->
 		<div class="control-group">
 		  <label class="control-label">Street Address</label>
 		  <div class="controls">
-		    <input id="address" name="address" type="text" placeholder="Street Address" class="input-xlarge" required="">
+		    <input id="address" name="address" type="text" placeholder="Street Address" class="input-xlarge" required="" value="{{patient.address}}">
 		  </div>
 		</div>
 		<!-- Text input-->
 		<div class="control-group">
 		  <label class="control-label">City</label>
 		  <div class="controls">
-		    <input id="city" name="city" type="text" placeholder="City" class="input-xlarge" required="">
+		    <input id="city" name="city" type="text" placeholder="City" class="input-xlarge" required="" value="{{patient.city}}">
 		  </div>
 		</div>
 		<!-- Text input-->
 		<div class="control-group">
 		  <label class="control-label">State</label>
 		  <div class="controls">
-		    <input id="state" name="state" type="text" placeholder="State" class="input-xlarge" required="">
+		    <input id="state" name="state" type="text" placeholder="State" class="input-xlarge" required="" value="{{patient.state}}">
 		  </div>
 		</div>
 		<!-- Text input-->
 		<div class="control-group">
 		  <label class="control-label">Zip Code</label>
 		  <div class="controls">
-		    <input id="zip-code" name="zip-code" type="text" placeholder="Zip Code" class="input-xlarge" required="">
+		    <input id="zip-code" name="zip-code" type="text" placeholder="Zip Code" class="input-xlarge" required="" value="{{patient.postalCode}}">
 		  </div>
 		</div>
-		<!-- Text input-->
+		% for phoneNumber in patient.phoneNumbers:
 		<div class="control-group">
-		  <label class="control-label">Home Phone</label>
+		  <label class="control-label">{{phoneNumber.numType}} Phone</label>
 		  <div class="controls">
-		    <input id="home-phone" name="home-phone" type="text" placeholder="Home Phone" class="input-xlarge" required="">
+		    <input id="{{phoneNumber.numType}}-phone" name="{{phoneNumber.numType}}-phone" type="text" placeholder="{{phoneNumber.numType}} Phone" class="input-xlarge" required="" value="{{phoneNumber.number}}">
 		  </div>
 		</div>
-		<!-- Text input-->
-		<div class="control-group">
-		  <label class="control-label">Work Phone</label>
-		  <div class="controls">
-		    <input id="works-phone" name="works-phone" type="text" placeholder="Work Phone" class="input-xlarge" required="">
-		  </div>
-		</div>
+		% end
 		<!-- Password input-->
 		<div class="control-group">
 		  <label class="control-label">Social security</label>
 		  <div class="controls">
-		    <input id="social-security" name="social-security" type="password" placeholder="Social Security" class="input-xlarge">
+		    <input id="social-security" name="social-security" type="password" placeholder="Social Security" class="input-xlarge" value="{{patient.ssn}}">
 		  </div>
 		</div>
 		<!-- Date input-->
 		<div class="control-group">
 		  <label class="control-label">Date of Birth</label>
 		  <div class="controls">
-		    <input id="dob" name="dob" type="date" placeholder="dob" class="input-xlarge" required="">
+		    <input id="dob" name="dob" type="date" placeholder="dob" class="input-xlarge" required="" value="{{patient.dob}}">
 		  </div>
 		</div>
 		<!-- Radio input-->
@@ -81,10 +87,10 @@
 		  <label class="control-label">Gender</label>
 		  <div class="controls">
 			<label class="radio inline">
-			  <input type="radio" id="male" value="male">M
+			  <input type="radio" id="male" {{!'checked="checked"' if patient.gender == 'M' else ''}} value="M">M
 			</label>
 			<label class="radio inline">
-			  <input type="radio" id="female" value="female">F
+			  <input type="radio" id="female" {{!'checked="checked"' if patient.gender == 'F' else ''}} value="F">F
 			</label>	
 		  </div>
 		</div>
@@ -92,49 +98,49 @@
 		<div class="control-group">
 		  <label class="control-label">Preferred Language</label>
 		  <div class="controls">
-		    <input id="preferred-language" name="preferred-language" type="text" placeholder="Preferred Language" class="input-xlarge" required="">
+		    <input id="preferred-language" name="preferred-language" type="text" placeholder="Preferred Language" class="input-xlarge" required="" value="{{patient.preferredLang}}">
 		  </div>
 		</div>
 		<!-- Text input-->
 		<div class="control-group">
 		  <label class="control-label">Occupation</label>
 		  <div class="controls">
-		    <input id="occupation" name="occupation" type="text" placeholder="occupation" class="input-xlarge">
+		    <input id="occupation" name="occupation" type="text" placeholder="occupation" class="input-xlarge" value="{{patient.occupation}}">
 		  </div>
 		</div>
 		<!-- Text input-->
 		<div class="control-group">
 		  <label class="control-label">Religion</label>
 		  <div class="controls">
-		    <input id="religion" name="religion" type="text" placeholder="Religion" class="input-xlarge">
+		    <input id="religion" name="religion" type="text" placeholder="Religion" class="input-xlarge" value="{{patient.religion}}">
 		  </div>
 		</div>
 		<!-- Text input-->
 		<div class="control-group">
 		  <label class="control-label">Race</label>
 		  <div class="controls">
-		    <input id="race" name="race" type="text" placeholder="Race" class="input-xlarge">
+		    <input id="race" name="race" type="text" placeholder="Race" class="input-xlarge" value="{{patient.race}}">
 		  </div>
 		</div>
 		<!-- Text input-->
 		<div class="control-group">
 		  <label class="control-label">Ethnicity</label>
 		  <div class="controls">
-		    <input id="ethnicity" name="ethnicity" type="text" placeholder="Ethnicity" class="input-xlarge">
+		    <input id="ethnicity" name="ethnicity" type="text" placeholder="Ethnicity" class="input-xlarge" value="{{patient.ethnicity}}">
 		  </div>
 		</div>
 		<!-- Text input-->
 		<div class="control-group">
 		  <label class="control-label">Weight</label>
 		  <div class="controls">
-		    <input id="weight" name="weight" type="text" placeholder="Weight" class="input-xlarge" required="">
+		    <input id="weight" name="weight" type="text" placeholder="Weight" class="input-xlarge" required="" value="{{patient.weight}}">
 		  </div>
 		</div>
 		<!-- Text input-->
 		<div class="control-group">
 		  <label class="control-label">Height</label>
 		  <div class="controls">
-		    <input id="height" name="height" type="text" placeholder="Height" class="input-xlarge" required="">
+		    <input id="height" name="height" type="text" placeholder="Height" class="input-xlarge" required="" value="{{patient.height}}">
 		  </div>
 		</div>
   </div><!-- Demographics -->
@@ -240,18 +246,24 @@
 			</div>
 			<div id="collapseHistory{{historyIx}}" class="accordion-body collapse">
 				<div class="accordion-inner">
-				% for i, historyItem in enumerate(historyGroup.items):
-					%if i%3 == 0 & i != len(historyGroup.items):
+
+				% for i , historyItem in enumerate(historyGroup.items):
+					%if i%3 == 0:
+					%open = True
+					%print i%3
 						<div class="row formRow">
+						%open = True
 					%end
 					<div class="span3">
 						<label class="checkbox">
 							<input type="checkbox" value="{{historyItem.itemName}}" />{{historyItem.itemName}} <br />
 						</label>
 					</div>
-					%if i%3 == 2 or i == len(historyGroup.items):
+					%if i%3 == 2 or len(historyGroup.items)-1 == i:
+					%print i%3
 						</div>
 					%end
+					%i+=1
 				% end
 				</div>
 			</div>
@@ -266,7 +278,7 @@
 		  <div class="controls">
 		  	%for i, surgery in enumerate(surgeries):
 		  		%if i%3 == 0 & i != len(surgeries):
-		  			%print i
+		  			
 		  			<div class="row formRow">
 		  		%end
 		  	<div class="span3">
@@ -274,8 +286,8 @@
 				  <input type="checkbox" id="surgery{{!i}}" value="{{!surgery.name}}">{{!surgery.name}}
 				</label>
 			</div> 
-				%if i%3 == 2 or i == len(surgeries):
-					%print i
+				%if i%3 == 2 or i == len(surgeries)-1:
+					
 		  			</div>
 		  		%end
 			%end
@@ -315,7 +327,7 @@
 		  <div class="controls">
 		  	%for i, allergy in enumerate(allergies):
 		  		%if i%3 == 0 & i != len(allergies):
-		  			%print i
+		  			
 		  			<div class="row formRow">
 		  		%end
 		  	<div class="span3">
@@ -323,16 +335,31 @@
 				  <input type="checkbox" id="allergy{{!i}}" value="{{!allergy.name}}">{{!allergy.name}}
 				</label>
 			</div> 
-				%if i%3 == 2 or i == len(allergies):
-					%print i
+				%if i%3 == 2 or i == len(allergies)-1:
+					
 		  			</div>
 		  		%end
 			%end
 		  </div>
 	</div>
   </div>
-  <div class="tab-pane" id="medications">...</div>
-  <div class="tab-pane" id="other">...</div>
+  <div class="tab-pane" id="medications">
+	<form class="form-inline">
+		<div class="control-group">
+			<label class="control-label">Medication</label>
+	  			<input type="text" class="input-large" placeholder="Medication">
+	 			<input type="password" class="input-small" placeholder="Dosage">
+	 			<input type="password" class="input-small" placeholder="frequency">
+	 	</div>
+	</form>
+	<button class="btn btn-small btn-primary" type="button">Add a Medication</button>
+  </div>
+  <div class="tab-pane" id="submitTab">
+  		<div class="row formRow">
+  			<h3> Please Review that your Information is Correct and Complete and Submit!</h3>
+  			<button class="btn btn-large btn-primary" type="Submit">Submit</button>
+  		</div>
+  </div>
 </div>
  
 <script>
