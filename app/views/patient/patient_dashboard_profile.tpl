@@ -229,7 +229,26 @@
 		  </div>
 		</div>
   </div>
-  <div class="tab-pane" id="medical-history">Profile</div>
+  <div class="tab-pane" id="medical-history">
+  	<div class="accordion" id="accordionMedicalHistory">
+		% for historyIx, historyGroup in enumerate(medicalHisotryGroups):
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionMedicalHistory" href="#collapseHistory{{historyIx}}">
+				{{historyGroup.groupName}}
+				</a>
+			</div>
+			<div id="collapseHistory{{historyIx}}" class="accordion-body collapse">
+				<div class="accordion-inner">
+				% for historyItem in historyGroup.items:
+				{{historyItem.itemName}}: <input type="checkbox" value="Yes">Yes</input><br />
+				% end
+				</div>
+			</div>
+		</div>
+		% end
+	</div>
+  </div>
   <div class="tab-pane" id="surgeries">Message</div>
   <div class="tab-pane" id="hospitalization">...</div>
   <div class="tab-pane" id="family-history">...</div>

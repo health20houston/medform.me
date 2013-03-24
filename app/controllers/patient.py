@@ -14,6 +14,10 @@ def patientDashboard(viewData):
 @view("patient_dashboard_profile")
 @patientAccount
 def patientDashboardProfile(viewData):
+	viewData = {
+		"medicalHisotryGroups": MedicalHistoryGroup.query.all()
+	}
+
 	return viewData
 
 @route("/api/patient/getcode")
