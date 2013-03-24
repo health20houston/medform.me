@@ -58,7 +58,7 @@ def home():
 			redirect("/lookup/" + request.all["code"])
 
 	if "userBtn" in request.all:
-		viewData["email"] = request.all["email"]
+		viewData["email"] = request.all["email"].lower()
 		viewData["pwd"] = request.all["pwd"]
 		user = Patient.get_by(email=viewData["email"], password=viewData["pwd"])
 		print "user = %s" % user
@@ -79,7 +79,7 @@ def api_validateUser():
 		"success": True,
 		"message": "",
 		"isNewUser": False,
-		"email": request.all["email"],
+		"email": request.all["email"].lower(),
 		"pwd": request.all["pwd"]
 	}
 
