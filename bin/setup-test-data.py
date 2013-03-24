@@ -243,7 +243,8 @@ adam = Patient(
 		EmergencyContact(firstName="Johny", lastName="Ive", phoneNumber=PhoneNumber(number="9729995412", numType="Mobile"), relationship="Designer"),
 		EmergencyContact(firstName="Adam", lastName="Sandler", phoneNumber=PhoneNumber(number="9729995434", numType="Mobile"), relationship="Actor")
 	],
-	primaryCare=PrimaryCare(firstName="Jose", lastName="JP", phoneNumber=PhoneNumber(number="9729995000", numType="Mobile"))
+	primaryCare=PrimaryCare(firstName="Jose", lastName="JP", phoneNumber=PhoneNumber(number="9729995000", numType="Mobile")),
+	hospitalization=Hospitalization(forWhat="Ran into a pole", when=parse("09/29/1998"))
 )
 
 PatientCode.generateNewCode(patient=adam)
