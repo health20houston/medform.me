@@ -17,7 +17,7 @@
 		<div class="control-group">
 		  <label class="control-label">First Name</label>
 		  <div class="controls">
-			<input id="name" name="firstName" type="text" placeholder="First name" class="input-xlarge" required="" value="{{patient.firstName}}">
+			<input id="firstName" name="firstName" type="text" placeholder="First name" class="input-xlarge" required="" value="{{patient.firstName}}">
 		  </div>
 		</div>
 		<div class="control-group">
@@ -394,13 +394,15 @@
 </div>
  
 <script>
-  $(function () {
-	$('#myTab a:first').tab('show');
-	$(".medPhone").focusout(function() {
-	    var $this = $(this);
-	    $this.val($this.val().replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, '($1)$2-$3'));
-	})
-  })
+	$(function () {
+		$('#myTab a:first').tab('show');
+		$(".medPhone").focusout(function() {
+			var $this = $(this);
+			$this.val($this.val().replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, '($1)$2-$3'));
+		});
+
+		$("#firstName").focus();
+	});
 </script>
 
 % rebase mainLayout title = "Profile"
