@@ -1,7 +1,7 @@
 <ul class="nav nav-tabs" id="myTab">
   <li class="active"><a href="#demographics" data-toggle="tab">Demographics</a></li>
   <li><a href="#insurance" data-toggle="tab">Insurance</a></li>
-  <li><a href="#primary-care" data-toggle="tab">Primary Care</a></li>
+  <li><a href="#primary-care" data-toggle="tab">Contacts</a></li>
   <li><a href="#medical-history" data-toggle="tab">Medical History</a></li>
   <li><a href="#surgeries" data-toggle="tab">Surgeries</a></li>
   <li><a href="#hospitalization" data-toggle="tab">Hospitalization</a></li>
@@ -181,44 +181,58 @@
 	% end
   </div>
   <div class="tab-pane" id="primary-care">
-		<!-- Text input-->
-		<div class="control-group">
-		  <label class="control-label">Emergency Contact Number</label>
-		  <div class="controls">
-			<input id="em-con-num" name="em-con-num" type="text" placeholder="Emergency Contact Number" class="input-xlarge" required="">
-		  </div>
-		</div>
-		<!-- Text input-->
-		<div class="control-group">
-		  <label class="control-label">Emergency Contact Relationship</label>
-		  <div class="controls">
-			<input id="em-con-rel" name="em-con-rel" type="text" placeholder="Emergency Contact Relationship" class="input-xlarge" required="">
-		  </div>
-		</div>
-		<!-- Text input-->
-		<div class="control-group">
-		  <label class="control-label">Primary Care Physician</label>
-		  <div class="controls">
-			<input id="pri-car-phy" name="pri-car-phy" type="text" placeholder="Primary Care Physician" class="input-xlarge">
-		  </div>
-		</div>
-		<!-- Text input-->
-		<div class="control-group">
-		  <label class="control-label">Primary Care Physician Number</label>
-		  <div class="controls">
-			<input id="pri-car-phy-num" name="pri-car-phy-num" type="text" placeholder="Primary Care Physician Number" class="input-xlarge">
-		  </div>
-		</div>
-		<!-- Check input-->
-		<div class="control-group">
-		  <label class="control-label">Do you have a Living Will or Medical Advance Directive?</label>
-		  <div class="controls">
-			<label class="checkbox">
-			  <input type="checkbox" value="Yes">
-			  Yes
-			</label>
-		  </div>
-		</div>
+  	% for emergencyContactIx, emergencyContact in enumerate(patient.emergencyContacts):
+  	<div class="control-group">
+	  <label class="control-label">Emergency Contact #{{emergencyContactIx + 1}}</label>
+	  <div class="controls">
+		<input id="em-con-fname{{emergencyContactIx}}" name="em-con-fname{{emergencyContactIx}}" type="text" placeholder="Emergency Contact Number" class="input-xlarge" required="" value="{{emergencyContact.firstName}}">
+	  </div>
+	</div>
+	<div class="control-group">
+	  <label class="control-label">Emergency Contact Last Name</label>
+	  <div class="controls">
+		<input id="em-con-lname{{emergencyContactIx}}" name="em-con-lname{{emergencyContactIx}}" type="text" placeholder="Emergency Contact Number" class="input-xlarge" required="" value="{{emergencyContact.lastName}}">
+	  </div>
+	</div>
+	<div class="control-group">
+	  <label class="control-label">Emergency Contact Number</label>
+	  <div class="controls">
+		<input id="em-con-num{{emergencyContactIx}}" name="em-con-num{{emergencyContactIx}}" type="text" placeholder="Emergency Contact Number" class="input-xlarge" required="" value="{{emergencyContact.phoneNumber.number}}">
+	  </div>
+	</div>
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label">Emergency Contact Relationship</label>
+	  <div class="controls">
+		<input id="em-con-rel{{emergencyContactIx}}" name="em-con-rel{{emergencyContactIx}}" type="text" placeholder="Emergency Contact Relationship" class="input-xlarge" required="" value="{{emergencyContact.relationship}}">
+	  </div>
+	</div>
+  	% end
+	
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label">Primary Care Physician</label>
+	  <div class="controls">
+		<input id="pri-car-phy" name="pri-car-phy" type="text" placeholder="Primary Care Physician" class="input-xlarge" value="{{patient.primaryCare.firstName}} {{patient.primaryCare.lastName}}">
+	  </div>
+	</div>
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label">Primary Care Physician Number</label>
+	  <div class="controls">
+		<input id="pri-car-phy-num" name="pri-car-phy-num" type="text" placeholder="Primary Care Physician Number" class="input-xlarge" value="{{patient.primaryCare.phoneNumber.number}}">
+	  </div>
+	</div>
+	<!-- Check input-->
+	<div class="control-group">
+	  <label class="control-label">Do you have a Living Will or Medical Advance Directive?</label>
+	  <div class="controls">
+		<label class="checkbox">
+		  <input name="willAdvance" type="checkbox" {{!'checked' if patient.willAdvance else ''}}>
+		  Yes
+		</label>
+	  </div>
+	</div>
   </div>
   <div class="tab-pane" id="medical-history">
 	<div class="accordion" id="accordionMedicalHistory">
@@ -231,25 +245,28 @@
 			</div>
 			<div id="collapseHistory{{historyIx}}" class="accordion-body collapse">
 				<div class="accordion-inner">
-
-				% for i , historyItem in enumerate(historyGroup.items):
+				%for i , historyItem in enumerate(historyGroup.items):
 					%if i%3 == 0:
 					%open = True
-					%print i%3
 						<div class="row formRow">
 						%open = True
 					%end
 					<div class="span3">
+					%flag = False
+					%for items in patient.medicalHistory:
+					%	if historyItem.itemName == items.itemName:
+					%		flag = True
+					%	end
+					%end
 						<label class="checkbox">
-							<input type="checkbox" value="{{historyItem.itemName}}" />{{historyItem.itemName}} <br />
+							<input type="checkbox" value="{{historyItem.itemName}}" {{!'checked="checked"' if flag else ''}} />{{historyItem.itemName}} <br />
 						</label>
 					</div>
 					%if i%3 == 2 or len(historyGroup.items)-1 == i:
-					%print i%3
 						</div>
 					%end
 					%i+=1
-				% end
+				%end
 				</div>
 			</div>
 		</div>
@@ -283,13 +300,13 @@
 	<div class="control-group">
 	  <label class="control-label">For What?</label>
 	  <div class="controls">
-		<textarea id="hospitalizationWhy" name="hospitalizationWhy" type="text" placeholder="Why were you hospitalized?" rows="3"></textarea>
+		<textarea id="hospitalizationWhy" name="hospitalizationWhy" type="text" placeholder="Why were you hospitalized?" rows="3">{{patient.hospitalization.forWhat}}</textarea>
 	  </div>
 	</div>
 	<div class="control-group">
 	  <label class="control-label">When?</label>
 	  <div class="controls">
-		<input id="hospitalizationWhen" name="hospitalizationWhen" type="text" placeholder="When were you hospitalized?" class="input-xlarge" required="">
+		<input id="hospitalizationWhen" name="hospitalizationWhen" type="text" placeholder="When were you hospitalized?" class="input-xlarge" required="" value="{{patient.hospitalization.when}}">
 	  </div>
 	</div>
   </div>
