@@ -64,6 +64,11 @@
     margin-right: 10px;
 }
 
+/*Icon Location Override*/
+[class^="icon-"],
+[class*=" icon-"] {
+  background-image: url("../images/glyphicons-halflings.png");
+}
 /*
  * Margin and Padding
  */
