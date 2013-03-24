@@ -113,6 +113,59 @@ stomach = MedicalHistoryGroup(groupName="Stomach/GastroIntestinal", sortOrder=1,
 	MedicalHistoryItem(itemName="Heartburn/Reflux", sortOrder=1)
 ])
 
+glaucoma = MedicalHistoryGroup(groupName="Glaucoma", sortOrder=1, items=[
+	MedicalHistoryItem(itemName="Glaucoma", sortOrder=1)
+])
+
+cataracts = Surgery(name="Cataracts", sortOrder=1)
+
+lasik = Surgery(name="LASIK", sortOrder=1)
+
+tonsillectomy = Surgery(name="Tonsillectomy", sortorder=1)
+
+thyroidectomy = Surgery(name="Thyroidectomy", sortorder=1)
+
+adenoidectomy = Surgery(name="Adenoidectomy", sortorder=1)
+
+coronaryBypass = Surgery(name="Coronary Bypass", sortorder=1)
+
+cardiacStents = Surgery(name="Cardiac Stents", sortorder=1)
+
+pacemaker = Surgery(name="Pacemaker", sortorder=1)
+
+heartValve = Surgery(name="Heart Valve", sortorder=1)
+
+gallbladder = Surgery(name="Gallbladder", sortorder=1)
+
+appendectomy = Surgery(name="Appendectomy", sortorder=1)
+
+bowelResection = Surgery(name="Bowel/stomach resection", sortorder=1)
+
+hemorrhoidectomy = Surgery(name="Hemorrhoidectomy", sortorder=1)
+
+bariatric = Surgery(name="Bariatric surgery", sortorder=1)
+
+hysterectomy = Surgery(name="Hysterectomy", sortorder=1)
+
+endoscopy = Surgery(name="Endoscopy", sortorder=1)
+
+colonoscopy = Surgery(name="Colonoscopy", sortorder=1)
+
+hernia = Surgery(name="Hernia", sortorder=1)
+
+spinalSurgery = Surgery(name="Spinal Surgery", sortorder=1)
+
+tubalLigation = Surgery(name="Tubal Ligation", sortorder=1)
+
+bladderSurgery = Surgery(name="Bladder surgery", sortorder=1)
+
+prostateSurgery = Surgery(name="Prostate surgery/resection", sortorder=1)
+
+sSec = Surgery(name="C-Section", sortorder=1)
+
+orthopedicJoints = Surgery(name="Orthopedic/joints", sortorder=1)
+
+
 adam = Patient(
 	firstName="Adam",
 	lastName="Presley",
