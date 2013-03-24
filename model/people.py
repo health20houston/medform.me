@@ -41,6 +41,7 @@ class Patient(Entity):
 	weight = Field(Integer(), nullable=True)
 	height = Field(Unicode(10), nullable=True)
 	hospitalization = OneToOne("Hospitalization")
+	familyhistories = OneToMany("FamilyHistory")
 
 	surgeries = OneToMany("Surgery")
 
