@@ -181,44 +181,58 @@
 	% end
   </div>
   <div class="tab-pane" id="primary-care">
-		<!-- Text input-->
-		<div class="control-group">
-		  <label class="control-label">Emergency Contact Number</label>
-		  <div class="controls">
-			<input id="em-con-num" name="em-con-num" type="text" placeholder="Emergency Contact Number" class="input-xlarge" required="">
-		  </div>
-		</div>
-		<!-- Text input-->
-		<div class="control-group">
-		  <label class="control-label">Emergency Contact Relationship</label>
-		  <div class="controls">
-			<input id="em-con-rel" name="em-con-rel" type="text" placeholder="Emergency Contact Relationship" class="input-xlarge" required="">
-		  </div>
-		</div>
-		<!-- Text input-->
-		<div class="control-group">
-		  <label class="control-label">Primary Care Physician</label>
-		  <div class="controls">
-			<input id="pri-car-phy" name="pri-car-phy" type="text" placeholder="Primary Care Physician" class="input-xlarge">
-		  </div>
-		</div>
-		<!-- Text input-->
-		<div class="control-group">
-		  <label class="control-label">Primary Care Physician Number</label>
-		  <div class="controls">
-			<input id="pri-car-phy-num" name="pri-car-phy-num" type="text" placeholder="Primary Care Physician Number" class="input-xlarge">
-		  </div>
-		</div>
-		<!-- Check input-->
-		<div class="control-group">
-		  <label class="control-label">Do you have a Living Will or Medical Advance Directive?</label>
-		  <div class="controls">
-			<label class="checkbox">
-			  <input type="checkbox" value="Yes">
-			  Yes
-			</label>
-		  </div>
-		</div>
+  	% for emergencyContactIx, emergencyContact in enumerate(patient.emergencyContacts):
+  	<div class="control-group">
+	  <label class="control-label">Emergency Contact #{{emergencyContactIx + 1}}</label>
+	  <div class="controls">
+		<input id="em-con-fname{{emergencyContactIx}}" name="em-con-fname{{emergencyContactIx}}" type="text" placeholder="Emergency Contact Number" class="input-xlarge" required="" value="{{emergencyContact.firstName}}">
+	  </div>
+	</div>
+	<div class="control-group">
+	  <label class="control-label">Emergency Contact Last Name</label>
+	  <div class="controls">
+		<input id="em-con-lname{{emergencyContactIx}}" name="em-con-lname{{emergencyContactIx}}" type="text" placeholder="Emergency Contact Number" class="input-xlarge" required="" value="{{emergencyContact.lastName}}">
+	  </div>
+	</div>
+	<div class="control-group">
+	  <label class="control-label">Emergency Contact Number</label>
+	  <div class="controls">
+		<input id="em-con-num{{emergencyContactIx}}" name="em-con-num{{emergencyContactIx}}" type="text" placeholder="Emergency Contact Number" class="input-xlarge" required="" value="{{emergencyContact.phoneNumber.number}}">
+	  </div>
+	</div>
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label">Emergency Contact Relationship</label>
+	  <div class="controls">
+		<input id="em-con-rel{{emergencyContactIx}}" name="em-con-rel{{emergencyContactIx}}" type="text" placeholder="Emergency Contact Relationship" class="input-xlarge" required="" value="{{emergencyContact.relationship}}">
+	  </div>
+	</div>
+  	% end
+	
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label">Primary Care Physician</label>
+	  <div class="controls">
+		<input id="pri-car-phy" name="pri-car-phy" type="text" placeholder="Primary Care Physician" class="input-xlarge" value="{{patient.primaryCare.firstName}} {{patient.primaryCare.lastName}}">
+	  </div>
+	</div>
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label">Primary Care Physician Number</label>
+	  <div class="controls">
+		<input id="pri-car-phy-num" name="pri-car-phy-num" type="text" placeholder="Primary Care Physician Number" class="input-xlarge" value="{{patient.primaryCare.phoneNumber.number}}">
+	  </div>
+	</div>
+	<!-- Check input-->
+	<div class="control-group">
+	  <label class="control-label">Do you have a Living Will or Medical Advance Directive?</label>
+	  <div class="controls">
+		<label class="checkbox">
+		  <input name="willAdvance" type="checkbox" {{!'checked' if patient.willAdvance else ''}}>
+		  Yes
+		</label>
+	  </div>
+	</div>
   </div>
   <div class="tab-pane" id="medical-history">
 	<div class="accordion" id="accordionMedicalHistory">
