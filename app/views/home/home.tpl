@@ -32,15 +32,28 @@
 			  <fieldset>
 			    <legend>For Doctor, Please Enter Code</legend>
 			    <p>Enter the patient provided code here!</p>
-			    <div class="control-group">
+			    <div class="control-group {{codeErrorCss}}">
 				    <div class="controls">
-				    	<input type="text" class="span7" name="code" placeholder="Please Enter Code Here..">
+				    	<input type="text" class="span7" name="code" placeholder="Please Enter Code Here.." value="{{codeValue}}">
+				    	% if codeError is not None:
+				    	<span class="help-inline">{{!codeError}}</span>
+				    	% end
 					</div><!--/controls-->
+				</div><!--/control-group-->
+			    <div class="control-group {{nameDocErrorCss}}">
 					<div class="controls">
-				    	<input type="text" class="span7" name="nameDoc" placeholder="Please Enter Doctor Name Here..">
+				    	<input type="text" class="span7" name="nameDoc" placeholder="Please Enter Doctor Name Here.." value="{{nameDocValue}}">
+				    	% if nameDocError is not None:
+				    	<span class="help-inline">{{!nameDocError}}</span>
+				    	% end
 					</div><!--/controls-->
+				</div><!--/control-group-->
+			    <div class="control-group {{nameHospitalErrorCss}}">
 					<div class="controls">
-				    	<input type="text" class="span7" name="namePatient" placeholder="Please Enter Patient Name Here..">
+				    	<input type="text" class="span7" name="nameHospital" placeholder="Please Enter Hospital Admin Name Here.." value="{{nameHospitalValue}}">
+				    	% if nameHospitalError is not None:
+				    	<span class="help-inline">{{!nameHospitalError}}</span>
+				    	% end
 					</div><!--/controls-->
 				</div><!--/control-group-->
 				<div class="control-group">
@@ -53,8 +66,5 @@
 		</div>
 	</div>
 </div>
-
-
-
 
 % rebase mainLayout title = "Home"
