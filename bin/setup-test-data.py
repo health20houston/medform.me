@@ -129,7 +129,7 @@ adam = Patient(
 	postalCode="77546"
 )
 
-adam.code = [PatientCode(code=PatientCode.generateNewCode(patient=adam), expirationDateTime=parse("09/27/2015"))]
+PatientCode.generateNewCode(patient=adam)
 
 
 session.commit()
