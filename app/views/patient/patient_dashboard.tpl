@@ -18,8 +18,8 @@
 	</div>
 
 	<div class="modal-body">
-		<h1>Your Code:
-  			<input id="codeBox" type="text" class="search-query" placeholder="Search">
+		<h2 class="pull-left margin-right-10">Your Code:</h2>
+  		<input id="codeBox" type="text" class="search-query" placeholder="Search" />
 	</div>
 
 	<div class="modal-footer">
