@@ -70,6 +70,10 @@ def home():
 				viewData["loginMessage"] = "Your Password is incorrect"
 			else:
 				viewData["signupMessage"] = "This email %s is not registered would you like to sign up?" % viewData["email"]
-
-
 	return viewData
+
+
+@route("/api/patient/validateCred", method="POST")
+def api_validateUser():
+	print request.all
+	return "hello"
