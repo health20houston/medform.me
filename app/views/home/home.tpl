@@ -117,5 +117,12 @@
 	</div><!-- Container for marketing -->
 </div><!-- Row Fluid End -->
 
+<script>
+	$(function() {
+		$('.hero-blue').css({
+		    'height': $('.hero-green').height()
+		});
+	});
+</script>
 
 % rebase homeLayout title = "Home"
