@@ -27,24 +27,9 @@
 <body>
 
 	<div class="container-fluid">
-<<<<<<< HEAD
-		<!--JS-START-->
-		<script src="/resources/js/jquery.js"></script>
-		<script src="/resources/js/bootstrap.js"></script>
-		<!--JS-END-->
-=======
-
-		<div class="flow-fluid">
-			<div class="row-fluid">
-				<div class="span12">
-					<img src="../resources/images/logo.png">
-				<div><!-- span12 -->
-			<div> <!-- row fluid -->
-		</div> <!-- flow fluid -->
-				<hr>
-<div class="clear"></div>
 	      <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit hero-bg">
+      	<div class="home-logo"><img src="../resources/images/logo.png"></div>
         <h2>Never fill out a doctor's form again</h2>
         <p><span class="banner-shadow">Secure, easy-to-use and confidential. Store your common patient registration information on our HIPAA-secure encrypted service and never fill out another registration form again. Share your registration information with any doctor's office.</span></p>
         <!-- <p><a href="#" class="btn btn-primary btn-large">Sign Up &raquo;</a></p> -->
@@ -55,8 +40,7 @@
 					<form>
 					  <fieldset>
 					    <legend>Log In / Sign Up</legend>
-					    <p>Type in your email and password to login or be directed to our sign up page to join.</p>
-							  <div class="control-group">
+								  <div class="control-group">
 							    <div class="controls">
 							      <input class="span7" type="text" id="inputEmail" placeholder="Email">
 							    </div>
@@ -101,16 +85,17 @@
 				<script src="/resources/js/jquery.js"></script>
 				<script src="/resources/js/bootstrap.js"></script>
 				<!--JS-END-->
->>>>>>> CSS file changes and main layout and home
 				
-		<!-- CONTENT -->
-		<div class="row-fluid">
-			<div class="span12" id="contentContainer">
-				%include
-			</div>
-		</div>
+				<!-- CONTENT -->
+				<div class="row-fluid">
+					<div class="span12" id="contentContainer">
+						%include
+					</div>
+				</div>
+				<!-- END-CONTENT -->
+			</div><!--/span-->
+		</div><!--/row-->
 
-		<!-- END-CONTENT -->
 		<hr>
 
 		<footer>
