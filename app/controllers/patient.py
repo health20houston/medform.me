@@ -19,6 +19,7 @@ def patientDashboardProfile(viewData):
 	}
 
 	viewData["surgeries"] = Surgery.query.all()
+	viewData["allergies"] = Allergy.query.all()
 	return viewData
 
 @route("/api/patient/getcode")
