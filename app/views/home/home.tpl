@@ -4,6 +4,9 @@
 			<form method="post" id="signUpForm">
 			  <fieldset>
 			    <legend>Log In / Sign Up</legend>
+			    	<div class="alert alert-error hide" id="helpinline">
+			    	</div>
+
 					  <div class="control-group">
 					    <div class="controls">
 					      <input class="span7" type="text" id="inputEmail" placeholder="Email" name="email">
@@ -12,15 +15,12 @@
 					  <div class="control-group">
 					    <div class="controls">
 					      <input class="span7" type="password" id="inputPassword" placeholder="Password" name="pwd">
-
-				    		<span class="help-inline"></span>
-
 					    </div>
 					  </div>
 					  <div class="control-group">
 					    <div class="controls">
 					      </label>
-					      <button type="btn" class="btn btn-primary btn-large" id="userBtn">Sign in/Sign Up</button>
+					      <button type="button" class="btn btn-primary btn-large" id="userBtn">Sign in/Sign Up</button>
 					    </div>
 					  </div>
 			  </fieldset>
@@ -68,30 +68,25 @@
 		</div>
 	</div>
 	
-			<div id="signUpPrompt" class="modal fade">
-			  <div class="modal-header">
-			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			    <h3>Sign Up</h3>
-			  </div>
-			  <div class="modal-body">
-			    <p></p>
-			  </div>
-			  <div class="modal-footer">
-			    <a href="javascript:void" class="btn" id="signUpNo">No</a>
-			    <a href="javascipt:void" class="btn btn-primary" id="signUpYes">Yes</a>
-			  </div>
-			</div>
-			<script>
-				$(function() {
-					new Medform.Patient.signUp();
+	<div id="signUpPrompt" class="modal fade">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	    <h3>Sign Up</h3>
+	  </div>
+	  <div class="modal-body">
+	    <p></p>
+	  </div>
+	  <div class="modal-footer">
+	    <a href="javascript:void" class="btn" id="signUpNo">No</a>
+	    <a href="javascipt:void" class="btn btn-primary" id="signUpYes">Yes</a>
+	  </div>
+	</div>
 
-				$.post("/api/patient/validateCred", $("#signUpForm").serialize(), function(data) {
-					console.log(data);
-				});
-				});
-			</script>
-
-
+	<script>
+		$(function() {
+			new Medform.Patient.signUp();
+		});
+	</script>
 </div>
 
 

@@ -76,17 +76,25 @@ def home():
 @route("/api/patient/validateCred", method="POST")
 def api_validateUser():
 	viewData = {
-
+		"success": True,
+		"message": "",
+		"isNewUser": False,
+		"email": request.all["email"],
+		"pwd": request.all["pwd"]
 	}
-	
 
-	viewData["email"] = request.all["email"]
-	viewData["pwd"] = request.all["pwd"]
-	user = Patient.get_by(email=viewData["email"], password=viewData["pwd"])
+	user = Patient.get_by(email=viewData["email"])
+
 	print "user = %s" % user
 	if user:
-		request.appSession["patient"] = user
-		redirect("/dashboard")
-			
+		if user.password == viewData["pwd"]:
+			request.appSession["patient"] = user
+		else:
+			viewData["success"] = False
+			viewData["message"] = "Invalid user name and/or password"
 
+	else:
+		viewData["success"] = False
+		viewData["isNewUser"] = True
+		
 	return viewData

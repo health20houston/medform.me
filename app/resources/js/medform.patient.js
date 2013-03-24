@@ -53,16 +53,44 @@ Medform.Patient.signUp = function() {
 	$("#signUpYes").click(function() {
 		self.hideDialog();
 	});
+
+	$("#userBtn").click(function(e) {
+		var userData = $("#signUpForm").serialize();
+
+		/*
+		 * If the user is valid redirect. If not, why not? If it
+		 * is because of invalid creds let the user know. If it
+		 * is because the account doesn't exist prompt.
+		 */
+		self.isValidUser(userData);
+	});
+
+	$("#inputEmail").focus();
+
 	/*
 	 * Methods
 	 */
 	self.showDialog = function() {
-
 		self.signUpPrompt.modal("show");
 	};
 
 	self.hideDialog = function() {
 		self.signUpPrompt.modal("hide");
+	};
+
+	self.isValidUser = function(userData) {
+		$.post("/api/patient/validateCred", userData, function(data) {
+			if (data.success) {
+				window.location = "/dashboard";
+			}
+			else {
+				if (!data.isNewUser) {
+					$("#helpinline").html(data.message).show();
+				} else {
+					self.showDialog();
+				}
+			}
+		});
 	};
 };
 
