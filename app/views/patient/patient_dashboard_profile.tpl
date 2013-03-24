@@ -250,21 +250,53 @@
 	</div>
   </div>
   <div class="tab-pane" id="surgeries">
-  	<!-- Radio input-->
+  	<!-- Checkbox input-->
 	<div class="control-group">
 		<label class="control-label">Have you had an Surgeries</label>
 		  <div class="controls">
 		  	%for i, surgery in enumerate(surgeries):
-			<label class="checkbox inline">
-			  <input type="checkbox" id="surgery{{!i}}" value="{{!surgery.name}}">{{!surgery.name}}
-			</label>
+		  		%if i%3 == 0 & i != len(surgeries):
+		  			%print i
+		  			<div class="row formRow">
+		  		%end
+		  	<div class="span3">
+				<label class="checkbox">
+				  <input type="checkbox" id="surgery{{!i}}" value="{{!surgery.name}}">{{!surgery.name}}
+				</label>
+			</div> 
+				%if i%3 == 2 or i == len(surgeries):
+					%print i
+		  			</div>
+		  		%end
 			%end
 		  </div>
-		</div>
+	</div>
   </div>
   <div class="tab-pane" id="hospitalization">...</div>
   <div class="tab-pane" id="family-history">...</div>
-  <div class="tab-pane" id="allergies">...</div>
+  <div class="tab-pane" id="allergies">
+	<!-- Checkbox input-->
+	<div class="control-group">
+		<label class="control-label">Do you have any Allergies?</label>
+		  <div class="controls">
+		  	%for i, allergy in enumerate(allergies):
+		  		%if i%3 == 0 & i != len(allergies):
+		  			%print i
+		  			<div class="row formRow">
+		  		%end
+		  	<div class="span3">
+				<label class="checkbox">
+				  <input type="checkbox" id="allergy{{!i}}" value="{{!allergy.name}}">{{!allergy.name}}
+				</label>
+			</div> 
+				%if i%3 == 2 or i == len(allergies):
+					%print i
+		  			</div>
+		  		%end
+			%end
+		  </div>
+	</div>
+  </div>
   <div class="tab-pane" id="medications">...</div>
   <div class="tab-pane" id="other">...</div>
 </div>

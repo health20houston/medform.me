@@ -165,6 +165,43 @@ sSec = Surgery(name="C-Section", sortorder=1)
 
 orthopedicJoints = Surgery(name="Orthopedic/joints", sortorder=1)
 
+penicillin = Allergy(name="Penicillin", sortorder=1)
+
+peanuts = Allergy(name="Peanuts", sortorder=1)
+
+latex = Allergy(name="Latex", sortorder=1)
+
+milk = Allergy(name="Milk", sortorder=1)
+
+eggs = Allergy(name="Eggs", sortorder=1)
+
+almonds = Allergy(name="Almonds", sortorder=1)
+
+cashews = Allergy(name="Cashews", sortorder=1)
+
+walnuts = Allergy(name="Walnut", sortorder=1)
+
+bass = Allergy(name="Bass", sortorder=1)
+
+cod = Allergy(name="Cod", sortorder=1)
+
+flounder = Allergy(name="Flounder", sortorder=1)
+
+crab = Allergy(name="Crab", sortorder=1)
+
+lobster = Allergy(name="Lobster", sortorder=1)
+
+shrimp = Allergy(name="Shrimp", sortorder=1)
+
+Soy = Allergy(name="Soy", sortorder=1)
+
+Wheat = Allergy(name="Wheat", sortorder=1)
+
+Aspirin = Allergy(name="Aspirin", sortorder=1)
+
+
+
+
 
 adam = Patient(
 	firstName="Adam",

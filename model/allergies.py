@@ -12,4 +12,4 @@ class Allergy(Entity):
 	sortOrder = Field(Integer(), nullable=False, default=0)
 
 	def __repr__(self):
-		return "<MedicalHistoryGroup %s (%s)>" % (self.name, self.id)
+		return "<Allergy %s (%s)>" % (self.name, self.id)
