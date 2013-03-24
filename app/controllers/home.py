@@ -9,7 +9,7 @@ def home():
 	viewData = {
 		"email": "",
 		"pwd": "",
-		"loginMessage": "Success",
+		"loginMessage": "",
 		"signupMessage": "",
 		"message": "Test message",
 		"patients": None,

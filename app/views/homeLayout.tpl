@@ -18,6 +18,12 @@
 	<link href="../resources/css/bootstrap-responsive.css" rel="stylesheet" />
 	<link href="../resources/css/style.css" rel="stylesheet" />
 	<!--CSS-END-->
+	<!--JS-START-->
+	<script src="/resources/js/jquery.js"></script>
+	<script src="/resources/js/bootstrap.js"></script>
+	<script src="/resources/js/medform.js"></script>
+	<script src="/resources/js/medform.patient.js"></script>
+	<!--JS-END-->
 
 	<!--[if lt IE 9]>
 	<script src="/resources/js/html5.js"></script>
@@ -51,9 +57,6 @@
 			<p>&copy; 2013 <a href="http://medform.me">medform.me</a> - Never fill out a doctor’s form again!</p>
 		</footer>
 	</div><!--/.fluid-container-->
-	<!--JS-START-->
-	<script src="/resources/js/jquery.js"></script>
-	<script src="/resources/js/bootstrap.js"></script>
-	<!--JS-END-->
+
 </body>
 </html>
