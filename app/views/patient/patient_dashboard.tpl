@@ -1,15 +1,16 @@
-<h1>Welcome to your Dashboard!</h1>
-
-<div class="row-fluid">
-	<div class="span6">
-		<button type="button" class="btn btn-large btn-success" id="btnGenerateCode">Generate Code</button>
-	</div>
-
-	<div class="span6">
-		<button type="button" class="btn btn-large btn-primary" id="btnMyProfile">My Profile</button>
-	</div>
-</div>
-
+		<div class="row-fluid show-grid">
+			<div class="span3 offset3">
+				<h4>Share Info</h4>
+				<button type="button" class="btn btn-large btn-success" id="btnGenerateCode">Generate Code</button>
+				<p>Ready for your appointment? Get a secure code you can share with your provider.</p>
+			</div>
+			<div class="span3">
+				<h4>Manage Profile</h4>
+				<button type="button" class="btn btn-large btn-primary" id="btnMyProfile">Update Profile</button>
+				<p>Need to update your information quickly? Click here to manage your profile.</p>
+			</div>
+		</div>
+<!--Code for the Modal-->
 <div id="generateCodeModal" class="modal hide fade">
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
