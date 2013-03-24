@@ -36,6 +36,7 @@ from model.model import *
 # Import all of your controllers here...
 from app.controllers import home
 from app.controllers import patient
+from app.controllers import lookup
 
 
 #
@@ -86,14 +87,16 @@ def heartbeat():
 app = SessionMiddleware(bottle.app(), config.SESSION_OPTS)
 setup_all()
 
-if config.BIND_TO_OUTSIDE_IP:
-	_s = socket(AF_INET, SOCK_DGRAM)
-	_s.connect(("google.com", 0))
-	outsideIP = _s.getsockname()
+#if config.BIND_TO_OUTSIDE_IP:
+#	_s = socket(AF_INET, SOCK_DGRAM)
+#	_s.connect(("google.com", 0))
+#	outsideIP = _s.getsockname()
 
 if config.DEBUG:
 	if config.BIND_TO_OUTSIDE_IP:
-		run(app = app, host = outsideIP[0], port = config.BIND_TO_PORT, reloader = True)
+		#we changed this line to hack the wired network and we love hacking
+		#run(app = app, host = outsideIP[0], port = config.BIND_TO_PORT, reloader = True)
+		run(app = app, host = "172.17.1.235", port = config.BIND_TO_PORT, reloader = True)
 	else:
 		run(app = app, host = "localhost", port = config.BIND_TO_PORT, reloader = True)
 else:

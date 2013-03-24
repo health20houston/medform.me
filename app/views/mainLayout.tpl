@@ -19,7 +19,6 @@
 	<link href="../resources/css/style.css" rel="stylesheet" />
 	<!--CSS-END-->
 	<!--JS-START-->
-	<script src="/resources/js/jquery.js"></script>
 	<script src="/resources/js/bootstrap.js"></script>
 	<script src="/resources/js/medform.js"></script>
 	<script src="/resources/js/medform.patient.js"></script>
