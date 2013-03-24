@@ -7,11 +7,23 @@ from model.model import *
 @view("home")
 def home():
 	viewData = { 
-		"message": "Hi there!",
-		"patients": Patient.query.all()
+		"email": "",
+		"pwd": "",
+		"success": True
 	}
 
-	if "btnSubmit" in request.all:
-		viewData["message"] = "You submitted %s fool!" % request.all["test"]
+	if "userBtn" in request.all:
+		viewData["email"] = request.all["email"]
+		viewData["pwd"] = request.all["pwd"]
+
+		if Patient.get_by(email=viewData["email"], password=viewData["pwd"]):
+			
+		else:
+			viewData["sucess"] = False
+
+		#Patient.query.all()
+
+		#request.all[""]
+		#viewData["message"] = "You submitted %s fool!" % request.all["test"]
 
 	return viewData
