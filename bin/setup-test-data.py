@@ -97,11 +97,6 @@ cataract = MedicalHistoryGroup(groupName="Cataract", sortOrder=1, items=[
 	MedicalHistoryItem(itemName="Cataract", sortOrder=1)
 ])
 
-
-glaucoma = MedicalHistoryGroup(groupName="Glaucoma", sortOrder=1, items=[
-	MedicalHistoryItem(itemName="Glaucoma", sortOrder=1)
-])
-
 thyroid = MedicalHistoryGroup(groupName="Thyroid", sortOrder=1, items=[
 	MedicalHistoryItem(itemName="Hypothyroid", sortOrder=1),
 	MedicalHistoryItem(itemName="Hypethyroid", sortOrder=1)

@@ -110,6 +110,14 @@
 					<td><strong>Religion</strong></td>
 					<td>{{patient.religion}}</td>
 				</tr>
+				<tr>
+					<td><strong>Marital Status</strong></td>
+					<td>{{patient.maritalStatus}}</td>
+				</tr>
+				<tr>
+					<td><strong>Has Advance Will</strong></td>
+					<td>{{patient.willAdvance}}</td>
+				</tr>
 			</tbody>
 		</table>
 	</fieldset>
@@ -131,7 +139,7 @@
 					% for ec in patient.emergencyContacts:
 						<tr>
 							<td>{{ec.firstName}}</td>
-							<td>{{ec.lsatName}}</td>
+							<td>{{ec.lastName}}</td>
 							<td>{{ec.phoneNumber}}</td>
 							<td>{{ec.relationship}}</td>
 						</tr>
@@ -146,93 +154,133 @@
 
 	<fieldset class="margin-top-25">
 		<legend>Insurance Policies</legend>
+
+		% if len(patient.insurancePolicies) > 0:
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Company Name</th>
+						<th>Date Effective</th>
+						<th>Policy #</th>
+						<th>Group #</th>
+						<th>Is Primary</th>
+					</tr>
+				</thead>
+				<tbody>
+					% for p in patient.insurancePolicies:
+						<tr>
+							<td>{{p.companyName}}</td>
+							<td>{{p.dateEffective}}</td>
+							<td>{{p.policyNumber}}</td>
+							<td>{{p.groupNumber}}</td>
+							<td>{{p.isPrimary}}</td>
+						</tr>
+					% end
+				</tbody>
+			</table>
+
+		% else:
+			None
+		% end
 	</fieldset>
-	
-	<table class="table table-striped">
-		<thead>
-			<tr><th>Key</th><th>Value</th></tr>
-		</thead>
-		<tbody>
-			<tr><td>Insurance Policies</td><td>
-				% if len(patient.insurancePolicies) > 0:
-				<table class="table table-striped">
-					<thead>
-						<tr><th>Company Name</th><th>Date Effective</th><th>Policy #</th><th>Group #</th><th>Is Primary</th></tr>
-					</thead>
-					<tbody>
-						% for policy in patient.insurancePolicies:
-						<tr><td>{{policy.companyName}}</td><td>{{policy.dateEffective}}</td><td>{{policy.policyNumber}}</td><td>{{policy.groupNumber}}</td><td>{{policy.isPrimary}}</td></tr>
-						% end
-					</tbody>
-				</table>
-				% else:
-				None
-				% end
-			</td></tr>
-			<tr><td>Primary Care</td><td>
-				% if patient.primaryCare is not None:
-				<table class="table table-striped">
-					<thead>
-						<tr><th>First Name</th><th>Last Name</th><th>Phone Number</th></tr>
-					</thead>
-					<tbody>						
-						<tr><td>{{patient.primaryCare.firstName}}</td><td>{{patient.primaryCare.lastName}}</td><td>{{patient.primaryCare.phoneNumber}}</td></tr>
-					</tbody>
-				</table>
-				% else:
-				None
-				% end
-			</td></tr>
-			<tr><td>Hospitalization</td><td>
-				% if patient.hospitalization is not None:
-				<table class="table table-striped">
-					<thead>
-						<tr><th>For what?</th><th>When</th></tr>
-					</thead>
-					<tbody>						
-						<tr><td>{{patient.hospitalization.forWhat}}</td><td>{{patient.hospitalization.when}}</td></tr>
-					</tbody>
-				</table>
-				% else:
-				None
-				% end
-			</td></tr>
-			<tr><td>Medical History</td><td>
-				% if len(patient.medicalHistory) > 0:
-				<table class="table table-striped">
-					<thead>
-						<tr><th>Item Name</th><th>Sort Order</th></tr>
-					</thead>
-					<tbody>
-						% for history in patient.medicalHistory:
-						<tr><td>{{history.itemName}}</td><td>{{history.sortOrder}}</td></tr>
-						% end
-					</tbody>
-				</table>
-				% else:
-				None
-				% end
-			</td></tr>
-			<tr><td>Surgeries</td><td>
-				% if len(patient.surgeries) > 0:
-				<table class="table table-striped">
-					<thead>
-						<tr><th>Name</th><th>Sort Order</th></tr>
-					</thead>
-					<tbody>
-						% for surgery in patient.surgeries:
-						<tr><td>{{surgery.name}}</td><td>{{surgery.sortOrder}}</td></tr>
-						% end
-					</tbody>
-				</table>
-				% else:
-				None
-				% end
-			</td></tr>
-			<tr><td>Marital Status</td><td>{{patient.maritalStatus}}</td></tr>
-			<tr><td>Has Advance Will</td><td>{{patient.willAdvance}}</td></tr>
-		</tbody>
-    </table>
+
+	<fieldset class="margin-top-25">
+		<legend>Primary Care</legend>
+
+		% if patient.primaryCare:
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Phone</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{{patient.primaryCare.firstName}}</td>
+						<td>{{patient.primaryCare.lastName}}</td>
+						<td>{{patient.primaryCare.phoneNumber}}</td>
+					</tr>
+				</tbody>
+			</table>
+
+		% else:
+			None
+		% end
+	</fieldset>
+
+	<fieldset class="margin-top-25">
+		<legend>Hospitalization</legend>
+
+		% if patient.hospitalization:
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>For what?</th>
+						<th>When?</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{{patient.hospitalization.forWhat}}</td>
+						<td>{{patient.hospitalization.when}}</td>
+					</tr>
+				</tbody>
+			</table>
+
+		% else:
+			None
+		% end
+	</fieldset>
+
+	<fieldset class="margin-top-25">
+		<legend>Surgeries</legend>
+
+		% if len(patient.surgeries):
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					% for s in patient.surgeries:
+						<tr>
+							<td>{{s.name}}</td>
+						</tr>
+					% end
+				</tbody>
+			</table>
+
+		% else:
+			None
+		% end
+	</fieldset>
+
+	<fieldset class="margin-top-25">
+		<legend>Medical History</legend>
+
+		% if len(patient.medicalHistory):
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					% for h in patient.medicalHistory:
+						<tr>
+							<td>{{h.itemName}}</td>
+						</tr>
+					% end
+				</tbody>
+			</table>
+
+		% else:
+			None
+		% end
+	</fieldset>
 </div>
 
-% rebase homeLayout title = "Home"
+% rebase homeLayout title="Patient Profile"
