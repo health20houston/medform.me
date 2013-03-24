@@ -276,7 +276,18 @@
 	  </div>
 	</div>
   </div>
-  <div class="tab-pane" id="family-history">...</div>
+  <div class="tab-pane" id="family-history">
+  	<div class="control-group">
+		<label class="control-label">Please check all of your family history</label>
+		  <div class="controls">
+		  	%for i, familyHistory in enumerate(familyHistories):
+			<label class="checkbox inline">
+			  <input type="checkbox" id="familyHistory{{!i}}">{{!familyHistory.name}}
+			</label><br/>
+			%end
+		  </div>
+		</div>
+  </div>
   <div class="tab-pane" id="allergies">...</div>
   <div class="tab-pane" id="medications">...</div>
   <div class="tab-pane" id="other">...</div>

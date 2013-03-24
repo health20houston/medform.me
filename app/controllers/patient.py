@@ -17,6 +17,7 @@ def patientDashboardProfile(viewData):
 	viewData["medicalHisotryGroups"] = MedicalHistoryGroup.query.all()
 	#reload patient object to prevent lazyLoad exception with .medicalHistory
 	viewData["patient"] = Patient.get_by(id=viewData["patient"].id)
+	viewData["familyHistories"] = FamilyHistory.query.all()
 
 	viewData["surgeries"] = Surgery.query.all()
 	return viewData
