@@ -2,6 +2,8 @@ from bottle import view, route, request
 from model.model import *
 from app.decorators.security import *
 
+from model.model import *
+
 @route("/dashboard")
 @view("patient_dashboard")
 @patientAccount
@@ -12,4 +14,4 @@ def patientDashboard(viewData):
 @route("/api/patient/getcode")
 @patientAccount
 def api_patientGetCode(viewData):
-	return { "test": 1 }
+	return PatientCode.generateNewCode()
