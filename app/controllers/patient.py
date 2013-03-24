@@ -14,9 +14,9 @@ def patientDashboard(viewData):
 @view("patient_dashboard_profile")
 @patientAccount
 def patientDashboardProfile(viewData):
-	viewData = {
-		"medicalHisotryGroups": MedicalHistoryGroup.query.all()
-	}
+	viewData["medicalHisotryGroups"] = MedicalHistoryGroup.query.all()
+	#reload patient object to prevent lazyLoad exception with .medicalHistory
+	viewData["patient"] = Patient.get_by(id=viewData["patient"].id)
 
 	return viewData
 

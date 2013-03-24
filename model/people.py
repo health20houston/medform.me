@@ -39,7 +39,7 @@ class Patient(Entity):
 	race = Field(Unicode(30), nullable=True) 
 	ethnicity = Field(Unicode(30), nullable=True)
 	weight = Field(Integer(), nullable=True)
-	height = Field(Unicode(10), nullable=True) 
+	height = Field(Unicode(10), nullable=True)
 
 	surgeries = OneToMany("Surgery")
 

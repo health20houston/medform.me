@@ -126,7 +126,10 @@ adam = Patient(
 	address="555 Another Way",
 	city="Friendswood",
 	state="Texas",
-	postalCode="77546"
+	postalCode="77546",
+	medicalHistory=[
+		thyroid.items[0]
+	]
 )
 
 PatientCode.generateNewCode(patient=adam)
