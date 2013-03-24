@@ -77,7 +77,7 @@ bloodClots = MedicalHistoryGroup(groupName="Blood Clots", sortOrder=8, items=[
 	MedicalHistoryItem(itemName="Blood Clots", sortOrder=1)
 ])
 
-bladderProblems = MedicalHistoryGroup(groupName="Bladder Problems?", sortOrder=1, items=[
+bladderProblems = MedicalHistoryGroup(groupName="Bladder Problems", sortOrder=1, items=[
 	MedicalHistoryItem(itemName="Stress Incontinence", sortOrder=1),
 	MedicalHistoryItem(itemName="Difficulty urinating", sortOrder=2),
 	MedicalHistoryItem(itemName="Night time urination (#)", sortOrder=3),
