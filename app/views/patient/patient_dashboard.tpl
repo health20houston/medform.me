@@ -6,7 +6,7 @@
 			</div>
 			<div class="span3">
 				<h4>Manage Profile</h4>
-				<button type="button" class="btn btn-large btn-primary" id="btnMyProfile">Update Profile</button>
+				<a href="/dashboard/profile"><button type="button" class="btn btn-large btn-primary" id="btnMyProfile">Update Profile</button></a>
 				<p>Need to update your information quickly? Click here to manage your profile.</p>
 			</div>
 		</div>
