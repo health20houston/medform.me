@@ -35,6 +35,7 @@ from model.model import *
 
 # Import all of your controllers here...
 from app.controllers import home
+from app.controllers import patient
 
 
 #
