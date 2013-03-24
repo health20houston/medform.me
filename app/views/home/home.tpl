@@ -12,9 +12,9 @@
 					  <div class="control-group">
 					    <div class="controls">
 					      <input class="span7" type="password" id="inputPassword" placeholder="Password" name="pwd">
-					    	% if loginMessage is not None:
-				    		<span class="help-inline">{{!loginMessage}}</span>
-				    		% end
+
+				    		<span class="help-inline"></span>
+
 					    </div>
 					  </div>
 					  <div class="control-group">
@@ -74,7 +74,7 @@
 			    <h3>Sign Up</h3>
 			  </div>
 			  <div class="modal-body">
-			    <p>{{!signupMessage}}</p>
+			    <p></p>
 			  </div>
 			  <div class="modal-footer">
 			    <a href="javascript:void" class="btn" id="signUpNo">No</a>
