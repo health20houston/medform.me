@@ -1,6 +1,27 @@
 # Medform.ly
-
 Never fill out a doctor's form again!
+
+Secure, easy-to-use and confidential. Store your common patient registration information on our HIPAA-secure 
+encrypted service and never fill out another registration form again. Share your registration information 
+with any doctor's office.
+
+## Our Story
+At a hackathon in Houston, TX called **Health 2.0** a small group of developers, designers, and healthcare professionals
+collaborated on an idea pitched by Manfred Stemberg, founder of iHealthExchange. We all share in the idea that we
+as people and patients should own our own patient information. The idea was simple: remove the need to manually
+fill out doctor visit forms over and over again. 
+
+After over 20 hours of straight coding and designing we had our first pass and we were ready to present to a panel 
+of judges consisting of healthcare professionals and entrepreneurs. Out of 7 team submissions we took 3rd place!
+
+## The Team
+The team is made up of five members.
+
+* Adrik Grigorian
+* Jose Pablo Ramirez Pradilla
+* Adam Presley
+* Jedrek Wosik
+* Antony Wu
 
 ## Apache 2.0 License
 Copyright (c) 2013 Medform.me
