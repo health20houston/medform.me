@@ -11,41 +11,17 @@ SESSION_PATH = os.path.join(APP_PATH, "sessions")
 
 
 ENV = "dev"
+DBNAME = "medformme"
 
 ENVIRONMENTS = {
-	"dev": {
-		"DBSERVER": "localhost",
-		"DBUSER": "user",
-		"DBPASS": "password"
-	},
-	"test": {
-		"DBSERVER": "localhost",
-		"DBUSER": "user",
-		"DBPASS": "password"
-	},
-	"beta": {
-		"DBSERVER": "localhost",
-		"DBUSER": "user",
-		"DBPASS": "password"
-	},
-	"demo": {
-		"DBSERVER": "localhost",
-		"DBUSER": "user",
-		"DBPASS": "password"
-	},
-	"prod": {
-		"DBSERVER": "localhost",
-		"DBUSER": "user",
-		"DBPASS": "password"
-	},
+	"dev": "sqlite:///%s/%s.db" % (ROOT_PATH, DBNAME),
+	"test": "sqlite:///%s/%s.db" % (ROOT_PATH, DBNAME),
+	"beta": "sqlite:///%s/%s.db" % (ROOT_PATH, DBNAME),
+	"demo": "mysql://root:password@localhost/%s" % DBNAME,
+	"prod": "mysql://root:password@localhost/%s" % DBNAME
 }
 
-DBNAME = "medformme"
-DBSERVER = ENVIRONMENTS[ENV]["DBSERVER"]
-DBUSER = ENVIRONMENTS[ENV]["DBUSER"]
-DBPASS = ENVIRONMENTS[ENV]["DBPASS"]
-
-DB_CONNECTION_STRING = "sqlite:///%s/%s.db" % (ROOT_PATH, DBNAME)
+DB_CONNECTION_STRING = ENVIRONMENTS[ENV]
 
 #
 # Session settings
