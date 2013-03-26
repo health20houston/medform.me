@@ -37,13 +37,14 @@
 		<div class="flow-fluid">
 			<div class="row-fluid">
 				<div class="span12">
-					<img src="../resources/images/logo.png">
+					<img src="/resources/images/logo.png">
 				<div><!-- span12 -->
 			<div> <!-- row fluid -->
 		</div> <!-- flow fluid -->
-				<hr>
-<div class="clear"></div>
-		<div class="row-fluid">
+		
+		<hr />
+		<div class="clear"></div>
+
 		<!-- CONTENT -->
 		<div class="row-fluid">
 			<div class="span12" id="contentContainer">
@@ -52,7 +53,7 @@
 		</div>
 
 		<!-- END-CONTENT -->
-		<hr>
+		<hr />
 
 		<footer>
 			<p>&copy; 2013 <a href="http://medform.me">medform.me</a> - Never fill out a doctor’s form again!</p>
