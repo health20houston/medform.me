@@ -66,63 +66,53 @@
 			  </fieldset>
 			</form>
 		</div>
-			
-
 	</div>
+
 	<div class="clear"></div>
+	
 	<div class="row mid-grey">
+		<div class="container-fluid">
+			<!-- Three columns of text below the carousel -->
+			<div class="row-fluid marketing">
+				<div class="span4">
+					<img src="/resources/images/marketing-lock.png" />
+					<h2>Secure</h2>
+					<p>HIPAA-secure encrypted service with temporary time-sensitive pass codes</p>
+				</div><!-- /.span4 -->
+				<div class="span4">
+					<img src="/resources/images/marketing-screen.png" />
+					<h2>Accessible</h2>
+					<p>Generate access code on your mobile phone, tablet or computer at any time</p>
+				</div><!-- /.span4 -->
+				<div class="span4">
+					<img src="/resources/images/marketing-clock.png" />
+					<h2>Save Time</h2>
+					<p>All your registration information is prepared at your leisure and ready for the doctor</p>
+				</div><!-- /.span4 -->
+			</div><!-- /.row -->
 
-	<div class="container-fluid">
-		
-	      <!-- Three columns of text below the carousel -->
-      <div class="row-fluid marketing">
-        <div class="span4">
-          <img src="/resources/images/marketing-lock.png">
-          <h2>Secure</h2>
-          <p>HIPAA-secure encrypted service with temporary time-sensitive pass codes</p>
-        </div><!-- /.span4 -->
-        <div class="span4">
-          <img src="/resources/images/marketing-screen.png">
-          <h2>Accessible</h2>
-          <p>Generate access code on your mobile phone, tablet or computer at any time</p>
-        </div><!-- /.span4 -->
-        <div class="span4">
-          <img src="/resources/images/marketing-clock.png">
-          <h2>Save Time</h2>
-          <p>All your registration information is prepared at your leisure and ready for the doctor</p>
-        </div><!-- /.span4 -->
-      </div><!-- /.row -->
-
-      <!-- Modal for sign up prompt -->
-	<div id="signUpPrompt" class="modal fade">
-	  <div class="modal-header">
-	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	    <h3>Sign Up</h3>
-	  </div>
-	  <div class="modal-body">
-	    <p><span id="signUpMessage"></span></p>
-	  </div>
-	  <div class="modal-footer">
-	    <a href="javascript:void" class="btn" id="signUpNo">No</a>
-	    <a href="javascipt:void" class="btn btn-primary" id="signUpYes">Yes</a>
-	  </div>
-	</div>
-
-	<script>
-		$(function() {
-			new Medform.Patient.signUp();
-		});
-	</script>
-	</div>
+			<!-- Modal for sign up prompt -->
+			<div id="signUpPrompt" class="modal fade">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h3>Sign Up</h3>
+				</div>
+				<div class="modal-body">
+					<p><span id="signUpMessage"></span></p>
+				</div>
+				<div class="modal-footer">
+					<a href="javascript:void" class="btn" id="signUpNo">No</a>
+					<a href="javascipt:void" class="btn btn-primary" id="signUpYes">Yes</a>
+				</div>
+			</div>
+		</div>
 	</div><!-- Container for marketing -->
 </div><!-- Row Fluid End -->
 
 <script>
 	$(function() {
-		$('.hero-blue').css({
-		    'height': $('.hero-green').height()
-		});
+		new Medform.Patient.signUp();
 	});
 </script>
 
-% rebase homeLayout title = "Home"
+% rebase homeLayout title="Home"

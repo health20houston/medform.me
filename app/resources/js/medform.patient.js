@@ -64,6 +64,19 @@ Medform.Patient.signUp = function() {
 		self.isValidUser(userData);
 	});
 
+	$(".hero-blue").css({
+		"height": $(".hero-green").height()
+	});
+
+	/*
+	 * Allow for pressing Enter on both email and password fields
+	 */
+	$("#inputEmail,#inputPassword").keyup(function(e) {
+		if (e.keyCode === 13) {
+			$("#userBtn").trigger("click");
+		}
+	});
+
 	$("#inputEmail").focus();
 
 	/*
@@ -93,5 +106,3 @@ Medform.Patient.signUp = function() {
 		});
 	};
 };
-
-

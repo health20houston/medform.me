@@ -1,4 +1,5 @@
 Medform = {
+	"Home": {},
 	"Patient": {}
 };
 
