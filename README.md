@@ -3,7 +3,7 @@
 Never fill out a doctor's form again!
 
 ## Apache 2.0 License
-Copyright (c) 2013 Medform.ly 
+Copyright (c) 2013 Medform.me
 
 Apache License
 Version 2.0, January 2004
