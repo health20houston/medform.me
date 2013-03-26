@@ -4,8 +4,8 @@
 	<meta charset="utf-8" />
 	<title>{{title}} // Medform.me</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="" />
-	<meta name="author" content="" />
+	<meta name="description" content="Never fill out a doctor's form again" />
+	<meta name="author" content="Medform.me" />
 
 	<!--CSS-START-->
 	<link href="../resources/css/bootstrap.css" rel="stylesheet" />
