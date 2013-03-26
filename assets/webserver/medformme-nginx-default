@@ -1,0 +1,25 @@
+upstream medformme {
+	server localhost:8080;
+}
+
+server {
+	listen 80;
+	server_name medform.me;
+	root /webapps/medform.me/app;
+
+	keepalive_timeout 5;
+
+	#
+	# First try to serve the URI as a file directly, then proxy
+	#
+	location / {
+		try_files $uri @proxy_to_app;
+	}
+
+	location @proxy_to_app {
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header Host $http_host;
+		proxy_redirect off;
+		proxy_pass http://medformme;
+	}
+}
