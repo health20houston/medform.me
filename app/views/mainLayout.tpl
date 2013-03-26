@@ -4,20 +4,21 @@
 	<meta charset="utf-8" />
 	<title>{{title}} // Medform.me</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="" />
-	<meta name="author" content="" />
+	<meta name="description" content="Never fill out a doctor's form again" />
+	<meta name="author" content="Medform.me" />
 
 	<!--CSS-START-->
 	<link href="../resources/css/bootstrap.css" rel="stylesheet" />
-	    <style type="text/css">
-      body {
-        padding-top: 20px;
-        padding-bottom: 60px;
-      }
-      </style>
-	<link href="../resources/css/bootstrap-responsive.css" rel="stylesheet" />
-	<link href="../resources/css/style.css" rel="stylesheet" />
+	<style type="text/css">
+		body {
+			padding-top: 20px;
+			padding-bottom: 60px;
+		}
+	</style>
+	<link href="/resources/css/bootstrap-responsive.css" rel="stylesheet" />
+	<link href="/resources/css/style.css" rel="stylesheet" />
 	<!--CSS-END-->
+
 	<!--JS-START-->
 	<script src="/resources/js/jquery.js"></script>
 	<script src="/resources/js/bootstrap.js"></script>
