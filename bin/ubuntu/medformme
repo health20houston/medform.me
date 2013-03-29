@@ -1,0 +1,27 @@
+#
+# Medform.me Service Script
+# Adam Presley
+#
+
+
+case $1 in 
+start)
+	cd /webapps/medform.me/app
+	sh ./start.sh
+	;;
+
+stop)
+	cd /webapps/medform.me/bin
+	sh ./stop.sh
+	;;
+
+restart)
+	cd /webapps/medform.me/bin
+	sh ./stop.sh
+
+	cd /webapps/medform.me/app
+	sh ./start.sh
+	;;
+esac
+
+exit 0
