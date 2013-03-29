@@ -26,11 +26,6 @@ class Patient(Entity):
 	postalCode = Field(Unicode(10), nullable=False)
 
 	ssn = Field(Unicode(150), nullable=True)
-	phoneNumbers = OneToMany("PhoneNumber")
-	emergencyContacts = OneToMany("EmergencyContact")
-	insurancePolicies = OneToMany("InsurancePolicy")
-	primaryCare = OneToOne("PrimaryCare")
-	medicalHistory = OneToMany("MedicalHistoryItem")
 	middleName = Field(Unicode(30), nullable=True)
 	maritalStatus = Field(Enum("Married", "Single", "Divorced"), nullable=True)
 	preferredLang = Field(Unicode(30), nullable=True)
@@ -40,13 +35,22 @@ class Patient(Entity):
 	ethnicity = Field(Unicode(30), nullable=True)
 	weight = Field(Integer(), nullable=True)
 	height = Field(Unicode(10), nullable=True)
+
+####Relationships
+	phoneNumbers = OneToMany("PhoneNumber")
+	emergencyContacts = OneToMany("EmergencyContact")
+	insurancePolicies = OneToMany("InsurancePolicy")
+	primaryCare = OneToOne("PrimaryCare")
+	medicalHistory = OneToMany("MedicalHistoryItem")
 	hospitalization = OneToOne("Hospitalization")
 	familyHistories = ManyToMany("FamilyHistory")
-
 	allergies = ManyToMany("Allergy")
 	surgeries = ManyToMany("Surgery")
-
 	code = OneToMany("PatientCode")
+
+####Relationships to event Logging
+	eventLog = OneToMany("EventLog")
+	accessLog = OneToMany("accessLog")
 
 	def __repr__(self):
 		return "<Patient %s %s (%s)>" % (self.firstName, self.lastName, self.id)
